@@ -5,7 +5,7 @@ constants.Links = {
   CODE_OF_CONDUCT: 'http://confcodeofconduct.com/',
   TICKET_SALES: 'https://ti.to/trace-events/react-rally-2019',
   PROPOSAL_FORM: 'http://speak.reactrally.com/events/react-rally-2019',
-  HOTEL_RESERVATION: 'https://www.starwoodmeeting.com/Book/reactrally2019',
+  HOTEL_RESERVATION: 'https://www.marriott.com/event-reservations/reservation-link.mi?id=1551475617694&key=GRP&app=resvlink',
   VENUE_DIRECTIONS: 'https://goo.gl/maps/V1kpixDA8DF2',
   PARTY_DIRECTIONS: 'https://goo.gl/maps/AeYKJrkAFZG2',
   LIVE_STREAM_PLACEHOLDER: 'https://www.youtube.com/embed/5NNOrp_83RU',
@@ -17,7 +17,7 @@ constants.Links = {
 }
 
 constants.Prices = {
-  HOTEL_RATE: 165
+  HOTEL_RATE: 169
 }
 
 constants.Dates = {
@@ -26,5 +26,5 @@ constants.Dates = {
   TICKET_RELEASE: '2019-04-10T18:00:00-00:00',
   CONF_DAY_ONE: '2019-08-22T06:00:00-00:00',
   CONF_DAY_TWO: '2019-08-23T06:00:00-00:00',
-  HOTEL_DISCOUNT: '2019-07-16T06:00:00-00:00'
+  HOTEL_DISCOUNT: '2019-07-22T06:00:00-00:00'
 }
