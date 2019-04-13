@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router';
+import axios from 'axios';
 import moment from 'moment';
 import cx from 'classnames';
 import constants from 'helpers/constants';
@@ -8,7 +9,6 @@ import About from 'components/About';
 import Button from 'components/Button';
 import Person from 'components/Person';
 import SpeakerData from '../../../api/speakers';
-import Tickets from '../../../api/tickets';
 
 const {Dates} = constants;
 
@@ -60,6 +60,15 @@ const TicketCard = ({name, description, price, soldOut}) => {
 };
 
 export default () => {
+  const [ticketList, setTicketList] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:2000/api/releases').then(res => {
+      console.log(res.data.data || res.data.releases);
+      setTicketList(res.data.data || res.data.releases);
+    });
+  }, []);
+
   return (
     <div className="Home">
       <section className="Home__About">
@@ -69,6 +78,7 @@ export default () => {
           More about React Rally &raquo;
         </Link>
       </section>
+
       {Object.keys(SpeakerData).length > 0 ? (
         <section>
           <h2>Featured Speakers</h2>
@@ -111,9 +121,30 @@ export default () => {
 
       <section>
         <h2>Tickets</h2>
-        {Tickets.map((t, i) => {
-          return <TicketCard key={i} {...t} />;
-        })}
+        {ticketList
+          .filter(t => !t.secret)
+          .map(t => {
+            const price = (isNaN(t.price) ? '' : '$') + parseInt(t.price, 10);
+            const isOnSale = moment.utc().isAfter(moment.utc(t.start_at));
+            const label = t.sold_out
+              ? 'Sold Out'
+              : isOnSale
+              ? 'Buy Now'
+              : 'Coming Soon';
+
+            return (
+              <Card key={t.id} className="TicketCard">
+                <h3>{t.title}</h3>
+                <p>{t.description}</p>
+                <h2>{price}</h2>
+                <Button
+                  href={constants.Links.TICKET_SALES}
+                  disabled={t.sold_out}>
+                  {label}
+                </Button>
+              </Card>
+            );
+          })}
       </section>
     </div>
   );

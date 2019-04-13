@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start --single-run",
-    "start": "webpack-dev-server --inline --content-base ./",
+    "start": "NODE_ENV=production node server.js",
+    "dev": "NODE_ENV=development node server.js & webpack-dev-server --inline --content-base ./",
     "build": "npm run imagemin && NODE_ENV=production webpack",
     "imagemin": "./scripts/imagemin"
   },
@@ -16,7 +17,9 @@
   "author": "Matt Zabriskie",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
+    "cors": "^2.8.5",
     "moment": "^2.14.1",
     "prop-types": "15.6.1",
     "react": "^16.8.6",
