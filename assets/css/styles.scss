@@ -1,19 +1,21 @@
 /* font colors */
-$color-primary: #4A4A4A;
+$color-primary: #232323;
 $color-lightgray: #777777;
 $color-darkgray: #444444;
-$color-white: #FFFFFF;
-$color-green: #00AD92;
-$color-orange: #FF6D40;
+$color-white: #ffffff;
+$color-green: #00ad92;
+$color-red: #ca0419;
+$color-teal: #009dad;
 
 /* fill colors */
-$fill-white: #FFFFFF;
-$fill-orange: #FF6D40;
-$fill-lightyellow: #FFFFAF;
-$fill-lightgray: #F4F4F4;
-$fill-darkgray: #DCDCDC;
-$fill-lightgreen: #00AD93;
-$fill-mediumgreen: #57B5AC;
+$fill-white: #ffffff;
+$fill-orange: #ff6d40;
+$fill-red: #ca0419;
+$fill-lightyellow: #ffffaf;
+$fill-lightgray: #f4f4f4;
+$fill-darkgray: #dcdcdc;
+$fill-lightgreen: #00ad93;
+$fill-mediumgreen: #57b5ac;
 $fill-darkgreen: #008874;
 
 /* dimensions */
@@ -35,15 +37,23 @@ body {
 }
 
 a {
-  color: $color-green;
+  color: $color-red;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: $color-orange;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-teal;
+  border-left: 4px solid #01666b;
+  margin-left: -20px;
+  padding-left: 20px;
   font-family: 'museo-slab', sans-serif;
   margin: 0;
 }
@@ -55,43 +65,54 @@ section h1 {
 }
 
 /* forms */
-.Button, button, input[type="text"], input[type="email"] {
-  border-radius: 2px;
+.Button,
+button,
+input[type='text'],
+input[type='email'] {
   font-family: lato, sans-serif;
   font-size: $size-font-medium;
   padding: 5px 10px;
 }
 
-.Button[disabled], button[disabled] {
+.Button[disabled],
+button[disabled] {
   background-color: $fill-lightgray;
   border-color: $fill-darkgray;
   color: $color-lightgray;
   text-shadow: 1px 1px 0 $fill-white;
 }
 
-.Button, button {
+.Button,
+button {
+  border: 0 none;
   background-color: $fill-white;
-  border: 1px solid $color-green;
-  color: $color-green;
+  color: $color-red;
   cursor: pointer;
   display: inline-block;
+  padding: 8px 25px;
+  text-transform: uppercase;
 }
-.Button.medium, button.medium {
-  padding: 10px 25px;
+.Button.primary,
+button.primary {
+  background-color: $fill-red;
+  color: $color-white;
 }
-.Button.large, button.large {
+.Button.large,
+button.large {
   font-size: $size-font-default;
   padding: 12px 35px;
 }
 .Home__Header__Newsletter button,
-.Button.transparent, button.transparent {
+.Button.transparent,
+button.transparent {
   background-color: transparent;
   border-color: $color-white;
   color: $color-white;
 }
 
-input[type="text"], input[type="email"] {
-  border: 1px solid $fill-darkgray;
+input[type='text'],
+input[type='email'] {
+  border: 1px solid $fill-white;
   line-height: 1.6;
   width: 260px;
 }
@@ -102,18 +123,37 @@ input[type="text"], input[type="email"] {
 }
 
 section {
-  padding: 50px;
+  padding: 25px 0;
 }
 
-.col { display: inline-block; vertical-align: top; }
-.col-1 { width: $width-column; }
-.col-2 { width: $width-column * 2; }
-.col-3 { width: $width-column * 3; }
-.col-4 { width: $width-column * 4; }
-.col-5 { width: $width-column * 5; }
-.col-6 { width: $width-column * 6; }
-.col-7 { width: $width-column * 7; }
-.col-8 { width: $width-column * 8; }
+.col {
+  display: inline-block;
+  vertical-align: top;
+}
+.col-1 {
+  width: $width-column;
+}
+.col-2 {
+  width: $width-column * 2;
+}
+.col-3 {
+  width: $width-column * 3;
+}
+.col-4 {
+  width: $width-column * 4;
+}
+.col-5 {
+  width: $width-column * 5;
+}
+.col-6 {
+  width: $width-column * 6;
+}
+.col-7 {
+  width: $width-column * 7;
+}
+.col-8 {
+  width: $width-column * 8;
+}
 
 /* classes */
 .align-left {
@@ -154,8 +194,13 @@ ul.navigation {
   margin-bottom: -36px;
 }
 .navigation li a.active {
-  border-color: $color-orange;
+  border-color: $color-teal;
   color: $color-darkgray;
+}
+
+.Link {
+  color: $color-red;
+  text-transform: uppercase;
 }
 
 /* -- Home -- */
@@ -164,7 +209,7 @@ ul.navigation {
   background-size: cover;
 }
 .Home__Header__Wrapper {
-  background-color: rgba($fill-lightgreen, .95);
+  background-color: rgba($fill-lightgreen, 0.95);
   color: $color-white;
   text-align: center;
   padding: 50px 20% 0;
@@ -204,7 +249,7 @@ ul.navigation {
   z-index: 0;
 }
 .Home__Header .Button {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .Home__Dates {
   margin-top: 50px;
@@ -250,7 +295,7 @@ ul.navigation {
   margin: 0 -50px;
 }
 .Venue__Content {
-  background: rgba($fill-mediumgreen, .95);
+  background: rgba($fill-mediumgreen, 0.95);
   color: $color-white;
   padding: 50px;
 }
@@ -258,7 +303,7 @@ ul.navigation {
   color: $color-white;
 }
 .Venue__Content__Address {
-  color: rgba($color-white, .75);
+  color: rgba($color-white, 0.75);
   font-size: $size-font-medium;
   margin-bottom: 50px;
 }
@@ -268,7 +313,7 @@ ul.navigation {
 }
 .Venue__Hotel__Address,
 .Venue__Party__Address {
-  color: rgba($color-primary, .75);
+  color: rgba($color-primary, 0.75);
   font-size: $size-font-medium;
   margin-bottom: 25px;
 }
@@ -347,7 +392,7 @@ ul.navigation {
   margin-top: -60px;
 }
 .Schedule__Session__Description em {
-  color: $color-orange;
+  color: $color-teal;
   font-style: normal;
   font-size: $size-font-medium;
 }
@@ -363,6 +408,7 @@ ul.navigation {
 .Content {
   font-size: $size-font-medium;
   margin: 0 auto;
+  padding: 50px;
   max-width: 1200px;
 }
 
@@ -379,69 +425,39 @@ ul.navigation {
 }
 
 /* -- Footer -- */
+
 .Footer {
   color: $color-lightgray;
-}
-.Footer__Nav {
-  background-color: $fill-white;
-  border-top: 1px solid $fill-darkgray;
-}
-.Footer__Newsletter {
   background-color: $fill-lightgray;
-  border-top: 1px solid $fill-darkgray;
-  font-size: $size-font-medium;
-  color: $color-orange;
-  text-align: center;
-  padding: 15px 0;
+  font-size: 0.7em;
+  padding: 50px;
 }
-.Footer__About {
-  background-color: $fill-lightgray;
-  border-top: 1px solid $fill-darkgray;
-  font-size: $size-font-small;
+.Footer__Grid {
+  display: grid;
+  grid-template-columns: 30% 30%;
+  grid-column-gap: 40%;
 }
-.Footer__About h3,
-.Footer__About h4 {
-  font-weight: normal;
-}
-.Footer__About p {
-  margin-top: 0;
-}
-.Footer__About__Tickets {
-  top: 35px;
-  position: relative;
-}
-.Footer__About__Tickets h3 {
+.Footer h2,
+.Footer h4 {
   color: $color-darkgray;
-  font-size: $size-font-medium;
-  margin-bottom: 10px;
+  border: 0 none;
+  padding: 0;
 }
-.Footer__About__Tickets .Button {
-  margin-right: 16px;
+.Footer h4 {
+  margin-bottom: 5px;
 }
-.Footer__Social {
-  position: relative;
+.Footer section {
+  padding: 0 0 25px 0;
 }
-.Footer__Social .Icon {
-  position: absolute;
-  top: -21px;
-  left: 50%;
-  margin-left: -21px;
-}
-.Footer__Social .Icon--twitter {
-  margin-left: -82px;
-}
-.Footer__Social .Icon--github {
-  margin-left: -21px;
-}
-.Footer__Social .Icon--instagram {
-  margin-left: 42px;
-}
-.Footer__Copyright {
+section.Footer__Tickets {
   background-color: $fill-white;
-  border-top: 1px solid $fill-darkgray;
-  font-size: $size-font-small;
+  padding: 50px;
   text-align: center;
-  padding: 35px 0;
+  display: inline-block;
+  float: right;
+}
+section.Footer__Tickets h2 {
+  margin-bottom: 15px;
 }
 
 /* -- Person -- */
@@ -479,7 +495,7 @@ ul.navigation {
 
 /* -- Legend -- */
 .Legend {
-  color: $color-orange;
+  color: $color-teal;
   font-family: 'museo-slab', sans-serif;
   font-size: $size-font-medium;
   margin: 50px 0 25px;
@@ -504,9 +520,6 @@ ul.navigation {
 
 /* -- Icon -- */
 .Icon {
-  background: $fill-white;
-  border: 1px solid $fill-darkgray;
-  border-radius: 21px;
   color: $color-lightgray;
   display: inline-block;
   font-size: 28px;
@@ -515,14 +528,21 @@ ul.navigation {
   text-align: center;
 }
 .Icon:hover {
-  background: $fill-orange;
-  color: $color-white;
+  color: $color-darkgray;
 }
 
 /* -- Newsletter -- */
+.Newsletter {
+  margin-bottom: 50px;
+}
 .Newsletter__Label {
+  font-weight: bold;
+  font-size: $size-font-default;
   display: inline-block;
   margin-right: 20px;
+}
+.Newsletter button {
+  box-shadow: 0 3px 5px $fill-darkgray;
 }
 
 /* -- Tickets -- */
