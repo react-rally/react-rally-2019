@@ -1,18 +1,62 @@
 import React from 'react';
 import {Link} from 'react-router';
 import moment from 'moment';
+import cx from 'classnames';
 import constants from 'helpers/constants';
 import shuffle from 'helpers/shuffle';
 import About from 'components/About';
 import Button from 'components/Button';
-import Card from 'components/Card';
 import Legend from 'components/Legend';
 import Person from 'components/Person';
 import SpeakerData from '../../../api/speakers';
 import Tickets from '../../../api/tickets';
 
-const DATE_FORMAT = 'MMMM D, YYYY';
 const {Dates} = constants;
+
+const UpcomingDate = ({timestamp, description}) => {
+  const date = moment.utc(timestamp);
+  const isAfter = moment.utc().isAfter(date);
+  const iconSource = `assets/dist/img/icons/calendar${
+    isAfter ? '-complete' : ''
+  }.svg`;
+
+  return (
+    <div
+      className={cx({
+        Home__UpcomingDate: true,
+        'Home__UpcomingDate--disabled': isAfter,
+      })}>
+      <img src={iconSource} />
+      <div>
+        <time>{date.format('MMMM D, YYYY')}</time>
+        <small>{description}</small>
+      </div>
+    </div>
+  );
+};
+
+const TicketCard = ({name, description, price, soldOut}) => {
+  return (
+    <div
+      className={cx('Home__TicketCard', {
+        'Home__TicketCard--disabled': soldOut,
+      })}>
+      <div className="Home__TicketCard__Details">
+        <h3>{name}</h3>
+        <p>{description}</p>
+      </div>
+      <div className="Home__TicketCard__Order">
+        <h2>{isNaN(price) ? '' : '$' + price}</h2>
+        <Button
+          className="primary"
+          href={constants.TICKET_SALES}
+          disabled={soldOut}>
+          {soldOut ? 'Sold Out' : 'Buy Now'}
+        </Button>
+      </div>
+    </div>
+  );
+};
 
 export default () => {
   return (
@@ -37,56 +81,33 @@ export default () => {
 
       <section>
         <h2>Upcoming Dates</h2>
-        <ul>
-          <li>
-            CFP Opens <b>{moment.utc(Dates.CFP_OPEN).format(DATE_FORMAT)}</b>
-          </li>
-          <li>
-            CFP Closes <b>{moment.utc(Dates.CFP_CLOSE).format(DATE_FORMAT)}</b>
-          </li>
-          <li>
-            Early Bird - Round One{' '}
-            <b>{moment.utc(Dates.TICKET_RELEASE).format(DATE_FORMAT)}</b>
-          </li>
-          <li>
-            Early Bird - Round Two{' '}
-            <b>
-              {moment
-                .utc(Dates.TICKET_RELEASE)
-                .add(7, 'days')
-                .format(DATE_FORMAT)}
-            </b>
-          </li>
-          <li>
-            Standard Tickets{' '}
-            <b>
-              {moment
-                .utc(Dates.TICKET_RELEASE)
-                .add(14, 'days')
-                .format(DATE_FORMAT)}
-            </b>
-          </li>
-        </ul>
+        <UpcomingDate
+          timestamp={Dates.CFP_OPEN}
+          description="Call for Proposals opens."
+        />
+        <UpcomingDate
+          timestamp={Dates.CFP_CLOSE}
+          description="Call for Proposals closes."
+        />
+        <UpcomingDate
+          timestamp={Dates.TICKET_RELEASE}
+          description="Early Bird Tickets (round one) go on sale."
+        />
+        <UpcomingDate
+          timestamp={moment.utc(Dates.TICKET_RELEASE).add(7, 'days')}
+          description="Early Bird Tickets (round two) go on sale."
+        />
+        <UpcomingDate
+          timestamp={moment.utc(Dates.TICKET_RELEASE).add(14, 'days')}
+          description="Standard tickets go on sale."
+        />
       </section>
 
       <section>
         <h2>Tickets</h2>
-        <div className="align-center">
-          {Tickets.map(t => {
-            const price = (isNaN(t.price) ? '' : '$') + t.price;
-
-            return (
-              <Card key={t.name} className="TicketCard">
-                <h3>{t.name}</h3>
-                <p>{t.description}</p>
-                <h2>{price}</h2>
-                <Button href={constants.TICKET_SALES} disabled={t.soldOut}>
-                  {t.soldOut ? 'Sold Out' : 'Buy Now'}
-                </Button>
-              </Card>
-            );
-          })}
-        </div>
+        {Tickets.map((t, i) => {
+          return <TicketCard key={i} {...t} />;
+        })}
       </section>
     </div>
   );

@@ -1,5 +1,6 @@
 /* font colors */
 $color-primary: #232323;
+$color-lightestgray: #919191;
 $color-lightgray: #777777;
 $color-darkgray: #444444;
 $color-white: #ffffff;
@@ -182,7 +183,6 @@ input[type='email'] {
 
 /* -- Home -- */
 .Home__Header__Wrapper {
-  /*background-color: rgba($fill-teal, 0.95);*/
   color: $color-white;
   padding: 50px;
   padding-bottom: 100px;
@@ -224,8 +224,55 @@ input[type='email'] {
 .Home__Header .Button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.Home__Dates {
-  margin-top: 50px;
+
+.Home__UpcomingDate {
+  display: grid;
+  grid-template-columns: 54px auto;
+  margin: 25px 0;
+}
+.Home__UpcomingDate--disabled {
+  color: $color-lightestgray;
+}
+.Home__UpcomingDate--disabled time {
+  text-decoration: line-through;
+}
+.Home__UpcomingDate img {
+  color: $color-teal;
+}
+.Home__UpcomingDate time {
+  font-size: $size-font-medium;
+  font-weight: bold;
+  display: block;
+}
+.Home__UpcomingDate small {
+  font-size: $size-font-small;
+}
+
+.Home__TicketCard {
+  background-color: $fill-lightgray;
+  padding: 25px;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: auto 200px;
+}
+.Home__TicketCard h2,
+.Home__TicketCard h3 {
+  border: 0 none;
+  padding: 0;
+}
+.Home__TicketCard h2 {
+  margin-bottom: 10px;
+}
+.Home__TicketCard h3 {
+  color: $color-primary;
+}
+.Home__TicketCard--disabled h3 {
+  text-decoration: line-through;
+}
+.Home__TicketCard__Order {
+  background-color: $fill-white;
+  text-align: center;
+  padding: 25px;
 }
 
 /* -- Sponsors -- */
@@ -380,12 +427,14 @@ input[type='email'] {
 /* -- Content -- */
 .Content {
   font-size: $size-font-medium;
-  margin: 0 auto;
-  padding: 50px;
-  max-width: 1200px;
+  padding: 50px 175px;
 }
 .Content section {
-  padding: 25px 0;
+  padding: 25px;
+}
+.Content section > h2 {
+  margin-left: -25px;
+  margin-bottom: 50px;
 }
 
 /* -- Header -- */
@@ -403,7 +452,6 @@ input[type='email'] {
   display: none;
 }
 .Header__Nav {
-  /*background-color: rgba($fill-teal, 0.95);*/
   display: grid;
   grid-template-columns: 800px auto;
   padding: 25px;
@@ -591,34 +639,6 @@ section.Footer__Tickets h2 {
 .Countdown__Timer {
   color: $color-white;
   font-family: courier;
-}
-
-/* -- Card -- */
-.Card {
-  border: 1px solid $fill-darkgray;
-  border-radius: 3px;
-  display: inline-block;
-  margin: 10px 20px;
-  padding: 20px;
-  width: 250px;
-}
-
-.TicketCard {
-  h3 {
-    color: inherit;
-    height: 50px;
-  }
-
-  h2 {
-    color: $color-green;
-    margin-bottom: 20px;
-    font-size: 2em;
-  }
-
-  p {
-    font-size: $size-font-small;
-    height: 125px;
-  }
 }
 
 /* responsiveness */
