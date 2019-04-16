@@ -6,7 +6,6 @@ import constants from 'helpers/constants';
 import shuffle from 'helpers/shuffle';
 import About from 'components/About';
 import Button from 'components/Button';
-import Legend from 'components/Legend';
 import Person from 'components/Person';
 import SpeakerData from '../../../api/speakers';
 import Tickets from '../../../api/tickets';
@@ -49,7 +48,7 @@ const TicketCard = ({name, description, price, soldOut}) => {
         <h2>{isNaN(price) ? '' : '$' + price}</h2>
         <Button
           className="primary"
-          href={constants.TICKET_SALES}
+          href={constants.Links.TICKET_SALES}
           disabled={soldOut}>
           {soldOut ? 'Sold Out' : 'Buy Now'}
         </Button>
@@ -71,11 +70,13 @@ export default () => {
       {Object.keys(SpeakerData).length > 0 ? (
         <section>
           <h2>Featured Speakers</h2>
-          {shuffle(Object.keys(SpeakerData))
-            .filter(key => SpeakerData[key].featured)
-            .map(key => {
-              return <Person {...SpeakerData[key]} key={key} />;
-            })}
+          <div className="align-center">
+            {shuffle(Object.keys(SpeakerData))
+              .filter(key => SpeakerData[key].featured)
+              .map(key => {
+                return <Person {...SpeakerData[key]} key={key} />;
+              })}
+          </div>
         </section>
       ) : null}
 

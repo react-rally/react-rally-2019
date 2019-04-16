@@ -22,7 +22,12 @@ export default class Tickets extends Component {
             Register Now
           </Button>
         ) : (
-          <Countdown date={TICKET_RELEASE_TIME} label="Tickets on sale soon" />
+          <Countdown
+            date={TICKET_RELEASE_TIME}
+            label={`Tickets on sale ${TICKET_RELEASE_TIME.format(
+              'MMMM DD, YYYY',
+            )}...`}
+          />
         )}
       </div>
     );

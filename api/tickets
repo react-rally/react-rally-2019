@@ -3,7 +3,7 @@
     "name": "Early Bird - Round One",
     "price": 400,
     "description": "Early bird tickets for React Rally! 20% off because we love early bird ticket buyers.",
-    "soldOut": false
+    "soldOut": true
   },
   {
     "name": "Early Bird - Round Two",
@@ -15,6 +15,24 @@
     "name": "Standard",
     "price": 500,
     "description": "The real deal. One ticket to React Rally.",
+    "soldOut": false
+  },
+  {
+    "name": "React Training Early Bird - Round One",
+    "price": 700,
+    "description": "Join Ryan Florence and Michael Jackson, for two-days of intense training in their brand new \"React Hooks\" workshop August 20-21. For more details see https://reacttraining.com/workshops/",
+    "soldOut": true
+  },
+  {
+    "name": "React Training Early Bird - Round Two",
+    "price": 800,
+    "description": "Join Ryan Florence and Michael Jackson, for two-days of intense training in their brand new \"React Hooks\" workshop August 20-21. For more details see https://reacttraining.com/workshops/",
+    "soldOut": false
+  },
+  {
+    "name": "React Training",
+    "price": 900,
+    "description": "Join Ryan Florence and Michael Jackson, for two-days of intense training in their brand new \"React Hooks\" workshop August 20-21. For more details see https://reacttraining.com/workshops/",
     "soldOut": false
   },
   {

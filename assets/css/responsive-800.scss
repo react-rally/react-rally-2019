@@ -12,25 +12,42 @@ section h1 {
   font-size: $size-font-default;
 }
 
-input[type="text"], input[type="email"] {
+input[type='text'],
+input[type='email'] {
   width: 200px;
 }
 
-.col-1 { width: $width-column * 2; }
-.col-2 { width: $width-column * 4; }
-.col-3 { width: $width-column * 6; }
-.col-4 { width: $width-column * 8; }
-.col-5 { width: $width-column * 10; }
-.col-6 { width: $width-column * 12; }
-.col-7 { width: $width-column * 14; }
-.col-8 { width: $width-column * 16; }
+.col-1 {
+  width: $width-column * 2;
+}
+.col-2 {
+  width: $width-column * 4;
+}
+.col-3 {
+  width: $width-column * 6;
+}
+.col-4 {
+  width: $width-column * 8;
+}
+.col-5 {
+  width: $width-column * 10;
+}
+.col-6 {
+  width: $width-column * 12;
+}
+.col-7 {
+  width: $width-column * 14;
+}
+.col-8 {
+  width: $width-column * 16;
+}
 
 ul.navigation {
   padding: 0;
 }
 .navigation li {
   display: block;
-  border-bottom: 1px solid $fill-darkgray;
+  border-bottom: 1px solid $color-grayLight;
   padding: 12px 0;
 }
 .navigation li:last-of-type {
@@ -57,7 +74,7 @@ ul.navigation {
   width: 100%;
 }
 .Home__Header__Nav.navigation {
-  border-top: 1px solid $fill-darkgreen;
+  border-top: 1px solid $color-tealDark;
   display: block;
   position: relative;
   left: 0;
@@ -81,7 +98,7 @@ ul.navigation {
   width: 100%;
 }
 .Header--padded .Header__Nav {
-  background: $fill-lightgray;
+  background: $color-grayLightest;
   display: block;
 }
 .navigation li {
@@ -89,7 +106,7 @@ ul.navigation {
   padding: 0;
 }
 .navigation li a {
-  border-bottom: 1px solid $fill-darkgray;
+  border-bottom: 1px solid $color-grayLight;
   display: block;
   height: inherit;
   margin-bottom: 0;
@@ -99,14 +116,14 @@ ul.navigation {
   border-bottom: 0 none !important;
 }
 .Home__Header__Nav.navigation li a {
-  border-bottom-color: $fill-darkgreen;
+  border-bottom-color: $color-tealDark;
 }
 .Header--padded .Header__Nav a {
   display: none;
 }
 .Header--padded .Header__Nav a.active {
   border-bottom-width: 0;
-  color: $color-green;
+  color: $color-teal;
   display: block;
 }
 .Header--padded .Header__Nav a.active:after {
@@ -119,7 +136,7 @@ ul.navigation {
   display: block;
 }
 .Header--padded .Header__Nav--active a.active {
-  border-bottom: 1px solid $fill-darkgray;
+  border-bottom: 1px solid $color-grayLight;
 }
 .Header--padded .Header__Nav--active a.active:after {
   display: none;
@@ -139,7 +156,6 @@ ul.navigation {
 .Footer__About__Tickets .Button {
   margin-right: 0;
 }
-
 
 .Venue__Content__Thumbnail {
   text-align: center;

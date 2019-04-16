@@ -21,14 +21,12 @@ const HomeHeader = () => {
   const isConferenceLive = moment
     .utc()
     .isSameOrAfter(moment.utc(constants.Dates.CONF_DAY_ONE));
-  const isCFPOpen =
-    true ||
-    moment
-      .utc()
-      .isBetween(
-        moment.utc(constants.Dates.CFP_OPEN),
-        moment.utc(constants.Dates.CFP_CLOSE),
-      );
+  const isCFPOpen = moment
+    .utc()
+    .isBetween(
+      moment.utc(constants.Dates.CFP_OPEN),
+      moment.utc(constants.Dates.CFP_CLOSE),
+    );
 
   return (
     <div className="Home__Header">
