@@ -489,6 +489,14 @@ input[type='email'] {
   grid-template-columns: 800px auto;
   padding: 25px;
 }
+.Header__Nav button.Header__Nav__Button {
+  display: none;
+  color: $color-red;
+  position: absolute;
+  height: 57px;
+  top: 17px;
+  right: 25px;
+}
 .Header__Nav section:last-of-type {
   text-align: right;
 }
@@ -535,6 +543,39 @@ input[type='email'] {
 .Header__Nav .Icon {
   line-height: 44px;
   vertical-align: middle;
+}
+.Header__Nav__Button__Hamburger {
+  display: block;
+  background-color: $color-red;
+  height: 4px;
+  width: 23px;
+  border-radius: 4px;
+
+  &::before {
+    content: ' ';
+    display: block;
+    background-color: $color-red;
+    height: 4px;
+    width: 23px;
+    border-radius: 4px;
+    position: relative;
+    top: -7px;
+  }
+
+  &::after {
+    content: ' ';
+    display: block;
+    background-color: $color-red;
+    height: 4px;
+    width: 23px;
+    border-radius: 4px;
+    position: relative;
+    top: 3px;
+  }
+}
+.Header__Nav__Button__X {
+  display: none;
+  font-size: $size-font-xlarge;
 }
 .Header__Logo {
   padding-left: 50px;
@@ -721,11 +762,4 @@ section.Footer__Tickets h2 {
 }
 @media only screen and (max-width: 800px) {
   @import 'responsive-800';
-}
-
-@media only screen and (max-device-width: 500px) {
-  @import 'responsive-500';
-}
-@media only screen and (max-width: 500px) {
-  @import 'responsive-500';
 }

@@ -85,47 +85,65 @@ const HomeHeader = () => {
   );
 };
 
-const Navigation = () => {
+const Navigation = ({onMenuClick = () => {}}) => {
   return (
     <div className="Header__Nav">
-      <section>
-        <Link to="/">
+      <section className="Header__Nav__Menu">
+        <Link to="/" id="logo" onClick={() => onMenuClick()}>
           <img src="assets/dist/img/ReactLogo.svg" width="44" height="44" />
         </Link>
         <ul>
           <li>
-            <Link activeClassName="active" to="/speakers">
+            <Link
+              activeClassName="active"
+              to="/speakers"
+              onClick={() => onMenuClick()}>
               Speakers
             </Link>
           </li>
           <li>
-            <Link activeClassName="active" to="/schedule">
+            <Link
+              activeClassName="active"
+              to="/schedule"
+              onClick={() => onMenuClick()}>
               Schedule
             </Link>
           </li>
           <li>
-            <Link activeClassName="active" to="/venue">
+            <Link
+              activeClassName="active"
+              to="/venue"
+              onClick={() => onMenuClick()}>
               Venue
             </Link>
           </li>
           <li>
-            <Link activeClassName="active" to="/sponsors">
+            <Link
+              activeClassName="active"
+              to="/sponsors"
+              onClick={() => onMenuClick()}>
               Sponsors
             </Link>
           </li>
           <li>
-            <Link activeClassName="active" to="/conduct">
+            <Link
+              activeClassName="active"
+              to="/conduct"
+              onClick={() => onMenuClick()}>
               Conduct
             </Link>
           </li>
           <li>
-            <Link activeClassName="active" to="/about">
+            <Link
+              activeClassName="active"
+              to="/about"
+              onClick={() => onMenuClick()}>
               About
             </Link>
           </li>
         </ul>
       </section>
-      <section>
+      <section className="Header__Nav__Social">
         <Icon href="https://twitter.com/ReactRally" type="twitter" />
         <Icon href="https://github.com/react-rally" type="github" />
         <Icon href="https://instagram.com/reactrally" type="instagram" />
@@ -133,17 +151,38 @@ const Navigation = () => {
           Tickets
         </Button>
       </section>
+      <button className="Header__Nav__Button" onClick={() => onMenuClick()}>
+        <div className="Header__Nav__Button__Hamburger" />
+        <div className="Header__Nav__Button__X">&times;</div>
+      </button>
     </div>
   );
 };
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMenuOpen: false,
+    };
+  }
+
   render() {
     const isHomeScreen = this.context.router.isActive('/', true);
+    const {isMenuOpen} = this.state;
 
     return (
-      <header className={cx('Header', {Header__Home: isHomeScreen})}>
-        <Navigation />
+      <header
+        className={cx('Header', {
+          Header__Home: isHomeScreen,
+          'Header--menuOpen': isMenuOpen,
+        })}>
+        <Navigation
+          onMenuClick={() => {
+            this.setState({isMenuOpen: !isMenuOpen});
+          }}
+        />
         {isHomeScreen && <HomeHeader />}
       </header>
     );

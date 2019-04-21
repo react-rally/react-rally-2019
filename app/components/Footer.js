@@ -12,7 +12,7 @@ export default () => {
         <Newsletter />
       </div>
       <div className="Footer__Grid">
-        <div>
+        <div className="Footer__Grid__Left">
           <section>
             <h4>About React Rally</h4>
             <div>
@@ -59,7 +59,7 @@ export default () => {
             </a>
           </section>
         </div>
-        <div>
+        <div className="Footer__Grid__Right">
           <section className="Footer__Tickets">
             <h2>Don't lose your spot.</h2>
             <Button
