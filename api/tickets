@@ -3,13 +3,13 @@
     "name": "Early Bird - Round One",
     "price": 400,
     "description": "Early bird tickets for React Rally! 20% off because we love early bird ticket buyers.",
-    "soldOut": false
+    "soldOut": true
   },
   {
     "name": "Early Bird - Round Two",
     "price": 450,
     "description": "One last chance to grab a React Rally ticket at a discounted price.",
-    "soldOut": false
+    "soldOut": true
   },
   {
     "name": "Standard",
@@ -18,9 +18,27 @@
     "soldOut": false
   },
   {
+    "name": "React Training Early Bird - Round One",
+    "price": 700,
+    "description": "Join Ryan Florence and Michael Jackson, for two-days of intense training in their brand new \"React Hooks\" workshop August 20-21. For more details see https://reacttraining.com/workshops/",
+    "soldOut": true
+  },
+  {
+    "name": "React Training Early Bird - Round Two",
+    "price": 800,
+    "description": "Join Ryan Florence and Michael Jackson, for two-days of intense training in their brand new \"React Hooks\" workshop August 20-21. For more details see https://reacttraining.com/workshops/",
+    "soldOut": true
+  },
+  {
+    "name": "React Training",
+    "price": 900,
+    "description": "Join Ryan Florence and Michael Jackson, for two-days of intense training in their brand new \"React Hooks\" workshop August 20-21. For more details see https://reacttraining.com/workshops/",
+    "soldOut": false
+  },
+  {
     "name": "Significant Other Activity Ticket",
     "price": 20,
-    "description": "Activities will be held both August 16 and August 17 in the evening after the conference. Purchase this ticket and bring your significant other along for the fun."
+    "description": "Activities will be held both August 22 and August 23 in the evening after the conference. Purchase this ticket and bring your significant other along for the fun."
   },
   {
     "name": "Charitable Donation",
