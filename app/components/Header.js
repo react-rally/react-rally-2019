@@ -89,7 +89,7 @@ const Navigation = ({onMenuClick = () => {}}) => {
   return (
     <div className="Header__Nav">
       <section className="Header__Nav__Menu">
-        <Link to="/" id="logo" onClick={() => onMenuClick()}>
+        <Link to="/" id="logo" onClick={() => onMenuClick(false)}>
           <img src="assets/dist/img/ReactLogo.svg" width="44" height="44" />
         </Link>
         <ul>
@@ -97,7 +97,7 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/speakers"
-              onClick={() => onMenuClick()}>
+              onClick={() => onMenuClick(false)}>
               Speakers
             </Link>
           </li>
@@ -105,7 +105,7 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/schedule"
-              onClick={() => onMenuClick()}>
+              onClick={() => onMenuClick(false)}>
               Schedule
             </Link>
           </li>
@@ -113,7 +113,7 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/venue"
-              onClick={() => onMenuClick()}>
+              onClick={() => onMenuClick(false)}>
               Venue
             </Link>
           </li>
@@ -121,7 +121,7 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/sponsors"
-              onClick={() => onMenuClick()}>
+              onClick={() => onMenuClick(false)}>
               Sponsors
             </Link>
           </li>
@@ -129,7 +129,7 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/conduct"
-              onClick={() => onMenuClick()}>
+              onClick={() => onMenuClick(false)}>
               Conduct
             </Link>
           </li>
@@ -137,7 +137,7 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/about"
-              onClick={() => onMenuClick()}>
+              onClick={() => onMenuClick(false)}>
               About
             </Link>
           </li>
@@ -179,8 +179,11 @@ export default class Header extends Component {
           'Header--menuOpen': isMenuOpen,
         })}>
         <Navigation
-          onMenuClick={() => {
-            this.setState({isMenuOpen: !isMenuOpen});
+          onMenuClick={isOpen => {
+            if (typeof isOpen === 'undefined') {
+              isOpen = !isMenuOpen;
+            }
+            this.setState({isMenuOpen: isOpen});
           }}
         />
         {isHomeScreen && <HomeHeader />}
