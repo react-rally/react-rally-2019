@@ -17,7 +17,7 @@ const CONF_DATES_DISPLAY =
   moment.utc(constants.Dates.CONF_DAY_TWO).format('D, YYYY');
 
 const HomeHeader = () => {
-  const isHotelAvailable = false;
+  const isHotelAvailable = true;
   const isConferenceLive = moment
     .utc()
     .isSameOrAfter(moment.utc(constants.Dates.CONF_DAY_ONE));

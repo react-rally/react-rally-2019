@@ -5,7 +5,9 @@ import constants from 'helpers/constants';
 import Button from 'components/Button';
 import Countdown from 'components/Countdown';
 
-const TICKET_RELEASE_TIME = moment.utc(constants.Dates.TICKET_RELEASE);
+const TICKET_RELEASE_TIME = moment
+  .utc(constants.Dates.TICKET_RELEASE)
+  .add(14, 'days');
 
 export default class Tickets extends Component {
   componentWillUnmount() {
