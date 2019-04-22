@@ -286,7 +286,27 @@ input[type='email'] {
     position: relative;
     top: 200px;
   }
-  .Newsletter__Label {
-    margin: 0 0 12px;
+
+  .Newsletter {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 121px;
+    grid-template-areas:
+      'header header'
+      'input button';
+
+    .Newsletter__Label {
+      margin: 0 0 12px;
+      grid-area: header;
+    }
+
+    > input[type='email'] {
+      grid-area: input;
+      width: 100%;
+    }
+
+    > button {
+      grid-area: button;
+    }
   }
 }
