@@ -190,17 +190,22 @@ input[type='email'] {
 }
 .link-list li a {
   position: relative;
-  top: -9px;
+  top: -7px;
 }
 
 .Link {
   color: $color-red;
   text-transform: uppercase;
 }
+.Content .Link {
+  font-size: $size-font-small;
+}
 
 /* -- Home -- */
-.Home__About section.highlight {
+.Content .Home__About section.highlight {
+  background-color: $color-white;
   margin-bottom: 25px;
+  padding: 0;
 }
 .Home__Header__Wrapper {
   color: $color-white;
