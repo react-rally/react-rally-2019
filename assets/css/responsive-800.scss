@@ -290,7 +290,7 @@ input[type='email'] {
   .Newsletter {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: auto 125px;
+    grid-template-columns: auto 130px;
     grid-template-areas:
       'header header'
       'input button';
