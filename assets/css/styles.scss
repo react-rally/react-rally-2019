@@ -30,7 +30,7 @@ $size-font-xsmall: 12px;
 body {
   background-color: $color-white;
   color: $color-primary;
-  font-family: lato, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: $size-font-default;
   margin: 0;
   min-width: 360px;
@@ -54,7 +54,7 @@ h6 {
   border-left: 4px solid $color-tealDark;
   margin-left: -20px;
   padding-left: 20px;
-  font-family: 'museo-slab', sans-serif;
+  font-family: 'Rubik', sans-serif;
   margin: 0;
 }
 
@@ -69,7 +69,7 @@ section h1 {
 button,
 input[type='text'],
 input[type='email'] {
-  font-family: lato, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: $size-font-medium;
   padding: 5px 10px;
 }
@@ -691,7 +691,7 @@ section.Footer__Tickets h2 {
 }
 .Countdown__Timer {
   color: $color-white;
-  font-family: courier;
+  font-family: 'Source Code Pro', monospace;
 }
 
 /* -- StyleGuide -- */
