@@ -77,6 +77,9 @@ export default () => {
                 return <Person {...SpeakerData[key]} key={key} />;
               })}
           </div>
+          <Link to="/speakers" className="Link">
+            See All the Speakers &raquo;
+          </Link>
         </section>
       ) : null}
 
