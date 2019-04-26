@@ -34,25 +34,31 @@ const UpcomingDate = ({timestamp, description}) => {
   );
 };
 
-const TicketCard = ({name, description, price, soldOut}) => {
+const TicketCard = ({ticket}) => {
+  const price = (isNaN(ticket.price) ? '' : '$') + parseInt(ticket.price, 10);
+  const isOnSale = moment.utc().isAfter(moment.utc(ticket.start_at));
+  const buttonLabel = ticket.sold_out
+    ? 'Sold Out'
+    : isOnSale
+    ? 'Buy Now'
+    : 'Coming Soon';
+
   return (
     <div
       className={cx('Home__TicketCard', {
-        'Home__TicketCard--disabled': soldOut,
+        'Home__TicketCard--disabled': ticket.sold_out,
       })}>
       <div className="Home__TicketCard__Details">
-        <h3>{name}</h3>
-        <p>{description}</p>
+        <h3>{ticket.title}</h3>
+        <p>{ticket.description}</p>
       </div>
       <div className="Home__TicketCard__Order">
-        {!isNaN(price) && (
-          <h2>{`$${price}`}</h2>
-        )}
+        <h2>{price}</h2>
         <Button
           className="primary"
           href={constants.Links.TICKET_SALES}
-          disabled={soldOut}>
-          {soldOut ? 'Sold Out' : 'Buy Now'}
+          disabled={ticket.sold_out}>
+          {buttonLabel}
         </Button>
       </div>
     </div>
@@ -64,8 +70,7 @@ export default () => {
 
   useEffect(() => {
     axios.get('http://127.0.0.1:2000/api/releases').then(res => {
-      console.log(res.data.data || res.data.releases);
-      setTicketList(res.data.data || res.data.releases);
+      setTicketList(res.data.releases);
     });
   }, []);
 
@@ -123,28 +128,9 @@ export default () => {
         <h2>Tickets</h2>
         {ticketList
           .filter(t => !t.secret)
-          .map(t => {
-            const price = (isNaN(t.price) ? '' : '$') + parseInt(t.price, 10);
-            const isOnSale = moment.utc().isAfter(moment.utc(t.start_at));
-            const label = t.sold_out
-              ? 'Sold Out'
-              : isOnSale
-              ? 'Buy Now'
-              : 'Coming Soon';
-
-            return (
-              <Card key={t.id} className="TicketCard">
-                <h3>{t.title}</h3>
-                <p>{t.description}</p>
-                <h2>{price}</h2>
-                <Button
-                  href={constants.Links.TICKET_SALES}
-                  disabled={t.sold_out}>
-                  {label}
-                </Button>
-              </Card>
-            );
-          })}
+          .map(t => (
+            <TicketCard key={t.id} ticket={t} />
+          ))}
       </section>
     </div>
   );
