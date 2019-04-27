@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {Router, Route, Switch} from 'react-router-dom';
+import {createBrowserHistory} from 'history';
 import App from 'App';
 import About from 'screens/About';
 import Conduct from 'screens/Conduct';
@@ -48,23 +49,26 @@ const NotFound = () => {
   }
 })();
 
+const history = createBrowserHistory();
 ReactDOM.render(
   <Router
-    history={browserHistory}
+    history={history}
     onUpdate={() => {
       window.scrollTo(0, 0);
     }}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/conduct" component={Conduct} />
-      <Route path="/schedule" component={Schedule} />
-      <Route path="/speakers" component={Speakers} />
-      <Route path="/sponsors" component={Sponsors} />
-      <Route path="/stream" component={Stream} />
-      <Route path="/venue" component={Venue} />
-      <Route path="*" component={NotFound} />
-    </Route>
+      <App>
+        <Switch>
+          <Route exact path="/about" component={About} />
+          <Route exact path="/conduct" component={Conduct} />
+          <Route exact path="/schedule" component={Schedule} />
+          <Route exact path="/speakers" component={Speakers} />
+          <Route exact path="/sponsors" component={Sponsors} />
+          <Route exact path="/stream" component={Stream} />
+          <Route exact path="/venue" component={Venue} />
+          <Route exact path="/" component={Home} />
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </App>
   </Router>,
   document.getElementById('container'),
 );

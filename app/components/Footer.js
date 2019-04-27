@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import constants from 'helpers/constants';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
