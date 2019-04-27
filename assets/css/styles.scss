@@ -74,13 +74,6 @@ input[type='email'] {
   padding: 5px 10px;
 }
 
-.Button[disabled],
-button[disabled] {
-  background-color: $color-grayLightest;
-  border-color: $color-grayLight;
-  color: $color-grayDark;
-}
-
 .Button,
 button {
   border: 0 none;
@@ -101,8 +94,8 @@ button.primary {
   background-color: $color-red;
   color: $color-white;
 }
-.Button.primary:hover,
-button.primary:hover {
+.Button.primary:not([disabled]):hover,
+button.primary:not([disabled]):hover {
   background-color: $color-redDark;
 }
 .Button.large,
@@ -115,6 +108,13 @@ button.transparent {
   background-color: transparent;
   border-color: $color-white;
   color: $color-white;
+}
+
+.Button[disabled],
+button[disabled] {
+  background-color: $color-grayLightest;
+  border-color: $color-grayLight;
+  color: $color-grayDark;
 }
 
 input[type='text'],
