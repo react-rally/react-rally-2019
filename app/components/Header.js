@@ -1,7 +1,6 @@
 import React, {Component, useState} from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
-import {Link} from 'react-router';
+import {Route, NavLink} from 'react-router-dom';
 import moment from 'moment';
 import constants from 'helpers/constants';
 import DateUtils from 'helpers/DateUtils';
@@ -44,9 +43,9 @@ const HomeHeader = () => {
           </p>
           <div className="Home__Header__Buttons">
             {isConferenceLive ? (
-              <Link to="/stream" className="Button large">
+              <NavLink to="/stream" className="Button large">
                 Watch Live Stream
-              </Link>
+              </NavLink>
             ) : false ? (
               <Countdown
                 date={new Date(
@@ -85,62 +84,33 @@ const HomeHeader = () => {
   );
 };
 
-const Navigation = ({onMenuClick = () => {}}) => {
+const navItems = [
+  ['Speakers', '/speakers'],
+  ['Schedule', '/schedule'],
+  ['Venue', '/venue'],
+  ['Sponsors', '/sponsors'],
+  ['Conduct', '/conduct'],
+  ['About', '/about'],
+];
+
+const Navigation = ({onMenuClick}) => {
   return (
     <div className="Header__Nav">
       <section className="Header__Nav__Menu">
-        <Link to="/" id="logo" onClick={() => onMenuClick(false)}>
+        <NavLink to="/" id="logo" onClick={() => onMenuClick(false)}>
           <img src="assets/dist/img/ReactLogo.svg" width="44" height="44" />
-        </Link>
+        </NavLink>
         <ul>
-          <li>
-            <Link
-              activeClassName="active"
-              to="/speakers"
-              onClick={() => onMenuClick(false)}>
-              Speakers
-            </Link>
-          </li>
-          <li>
-            <Link
-              activeClassName="active"
-              to="/schedule"
-              onClick={() => onMenuClick(false)}>
-              Schedule
-            </Link>
-          </li>
-          <li>
-            <Link
-              activeClassName="active"
-              to="/venue"
-              onClick={() => onMenuClick(false)}>
-              Venue
-            </Link>
-          </li>
-          <li>
-            <Link
-              activeClassName="active"
-              to="/sponsors"
-              onClick={() => onMenuClick(false)}>
-              Sponsors
-            </Link>
-          </li>
-          <li>
-            <Link
-              activeClassName="active"
-              to="/conduct"
-              onClick={() => onMenuClick(false)}>
-              Conduct
-            </Link>
-          </li>
-          <li>
-            <Link
-              activeClassName="active"
-              to="/about"
-              onClick={() => onMenuClick(false)}>
-              About
-            </Link>
-          </li>
+          {navItems.map(([children, url]) =>
+            <li key={url}>
+              <NavLink
+                activeClassName="active"
+                to={url}
+                onClick={() => onMenuClick(false)}>
+                {children}
+              </NavLink>
+            </li>
+          )}
         </ul>
       </section>
       <section className="Header__Nav__Social">
@@ -159,39 +129,26 @@ const Navigation = ({onMenuClick = () => {}}) => {
   );
 };
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
+const Header = ({ isHomeScreen }) => {
+  const [isMenuOpen, setMenuState] = useState(false);
 
-    this.state = {
-      isMenuOpen: false,
-    };
-  }
-
-  render() {
-    const isHomeScreen = this.context.router.isActive('/', true);
-    const {isMenuOpen} = this.state;
-
-    return (
-      <header
-        className={cx('Header', {
-          Header__Home: isHomeScreen,
-          'Header--menuOpen': isMenuOpen,
-        })}>
-        <Navigation
-          onMenuClick={isOpen => {
-            if (typeof isOpen === 'undefined') {
-              isOpen = !isMenuOpen;
-            }
-            this.setState({isMenuOpen: isOpen});
-          }}
-        />
-        {isHomeScreen && <HomeHeader />}
-      </header>
-    );
-  }
+  return (
+    <header className={cx('Header', {
+      Header__Home: isHomeScreen,
+      'Header--menuOpen': isMenuOpen,
+    })}>
+      <Navigation onMenuClick={() => setMenuState(s => !s)} />
+      {isHomeScreen && <HomeHeader />}
+    </header>
+  )
 }
 
-Header.contextTypes = {
-  router: PropTypes.object,
-};
+const HeaderRoute = () => (
+  <Route
+    path="/"
+    render={({ match }) =><Header isHomeScreen={match.isExact}/>}
+  />
+);
+
+
+export default HeaderRoute;
