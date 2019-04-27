@@ -1,9 +1,7 @@
 import React from 'react'
 
-export default (props) => {
-  return (
-    <a href={props.href} target="_blank" className={`Icon Icon--${props.type}`}>
-      <i className={`fa fa-${props.type}`}/>
-    </a>
-  )
-}
+export default ({ href, type }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" className={`Icon Icon--${type}`}>
+    <i className={`fa fa-${type}`}/>
+  </a>
+);
