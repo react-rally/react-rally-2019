@@ -24,19 +24,19 @@ export default () => {
           </section>
           <section>
             <h4>Past Conferences</h4>
-            <a href="" target="_blank">
+            <a href="https://2015.reactrally.com" target="_blank">
               2015
             </a>
             &nbsp;&bull;&nbsp;
-            <a href="" target="_blank">
+            <a href="https://2016.reactrally.com" target="_blank">
               2016
             </a>
             &nbsp;&bull;&nbsp;
-            <a href="" target="_blank">
+            <a href="https://2017.reactrally.com" target="_blank">
               2017
             </a>
             &nbsp;&bull;&nbsp;
-            <a href="" target="_blank">
+            <a href="https://2018.reactrally.com" target="_blank">
               2018
             </a>
           </section>
