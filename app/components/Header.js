@@ -1,23 +1,28 @@
-import React, {Component, useState} from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import {Link} from 'react-router';
-import moment from 'moment';
-import constants from 'helpers/constants';
-import DateUtils from 'helpers/DateUtils';
-import Button from 'components/Button';
-import Countdown from 'components/Countdown';
-import Tickets from 'components/Tickets';
-import Icon from 'components/Icon';
-import Newsletter from 'components/Newsletter';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import { Link } from "react-router";
+import moment from "moment";
+import constants from "helpers/constants";
+import DateUtils from "helpers/DateUtils";
+import Button from "components/Button";
+import Countdown from "components/Countdown";
+import Tickets from "components/Tickets";
+import Icon from "components/Icon";
 
 const CONF_DATES_DISPLAY =
-  moment.utc(constants.Dates.CONF_DAY_ONE).format('MMMM D') +
-  '-' +
-  moment.utc(constants.Dates.CONF_DAY_TWO).format('D, YYYY');
+  moment.utc(constants.Dates.CONF_DAY_ONE).format("MMMM D") +
+  "-" +
+  moment.utc(constants.Dates.CONF_DAY_TWO).format("D, YYYY");
 
 const HomeHeader = () => {
   const isHotelAvailable = true;
+  const isOpportunityScholarshipAvailable = moment
+    .utc()
+    .isBetween(
+      moment.utc(constants.Dates.OPPORTUNITY_SCHOLARSHIP_OPEN_DATE),
+      moment.utc(constants.Dates.OPPORTUNITY_SCHOLARSHIP_CLOSE_DATE)
+    );
   const isConferenceLive = moment
     .utc()
     .isSameOrAfter(moment.utc(constants.Dates.CONF_DAY_ONE));
@@ -25,7 +30,7 @@ const HomeHeader = () => {
     .utc()
     .isBetween(
       moment.utc(constants.Dates.CFP_OPEN),
-      moment.utc(constants.Dates.CFP_CLOSE),
+      moment.utc(constants.Dates.CFP_CLOSE)
     );
 
   return (
@@ -37,10 +42,10 @@ const HomeHeader = () => {
           <h2>{CONF_DATES_DISPLAY}</h2>
           <h2>Salt Lake City, UT</h2>
           <p>
-            Facebook's React has taken client side development by storm. From
-            single-page apps, to server rendering, to native mobile, to apps on
-            your TV, React is everywhere. Come hear from the best and the
-            brightest in the React community about what makes it so incredible.
+            React Rally is a community conference about React and topics
+            interesting to React developers. We focus on a friendly, welcoming
+            atmosphere, engaging talks from new and established speakers, and
+            plenty of hallway-track time to chat with interesting people.
           </p>
           <div className="Home__Header__Buttons">
             {isConferenceLive ? (
@@ -50,8 +55,7 @@ const HomeHeader = () => {
             ) : false ? (
               <Countdown
                 date={new Date(
-                  Date.parse(constants.Dates.CONF_DAY_ONE) +
-                    DateUtils.HOURS * 9,
+                  Date.parse(constants.Dates.CONF_DAY_ONE) + DateUtils.HOURS * 9
                 ).toISOString()}
                 label="Live stream coming soon"
               />
@@ -63,8 +67,20 @@ const HomeHeader = () => {
                   <span>
                     <Button
                       href={constants.Links.PROPOSAL_FORM}
-                      className="large primary">
+                      className="large primary"
+                    >
                       Submit Proposal
+                    </Button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                  </span>
+                )}
+                {isOpportunityScholarshipAvailable && (
+                  <span>
+                    <Button
+                      href={constants.Links.OPPORTUNITY_SCHOLARSHIP_FORM}
+                      className="large"
+                    >
+                      Apply For Scholarship
                     </Button>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                   </span>
@@ -74,7 +90,8 @@ const HomeHeader = () => {
             {isHotelAvailable && (
               <Button
                 href={constants.Links.HOTEL_RESERVATION}
-                className="large transparent">
+                className="large transparent"
+              >
                 Book Hotel
               </Button>
             )}
@@ -85,7 +102,7 @@ const HomeHeader = () => {
   );
 };
 
-const Navigation = ({onMenuClick = () => {}}) => {
+const Navigation = ({ onMenuClick = () => {} }) => {
   return (
     <div className="Header__Nav">
       <section className="Header__Nav__Menu">
@@ -97,7 +114,8 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/speakers"
-              onClick={() => onMenuClick(false)}>
+              onClick={() => onMenuClick(false)}
+            >
               Speakers
             </Link>
           </li>
@@ -105,7 +123,8 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/schedule"
-              onClick={() => onMenuClick(false)}>
+              onClick={() => onMenuClick(false)}
+            >
               Schedule
             </Link>
           </li>
@@ -113,7 +132,8 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/venue"
-              onClick={() => onMenuClick(false)}>
+              onClick={() => onMenuClick(false)}
+            >
               Venue
             </Link>
           </li>
@@ -121,7 +141,8 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/sponsors"
-              onClick={() => onMenuClick(false)}>
+              onClick={() => onMenuClick(false)}
+            >
               Sponsors
             </Link>
           </li>
@@ -129,7 +150,8 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/conduct"
-              onClick={() => onMenuClick(false)}>
+              onClick={() => onMenuClick(false)}
+            >
               Conduct
             </Link>
           </li>
@@ -137,7 +159,8 @@ const Navigation = ({onMenuClick = () => {}}) => {
             <Link
               activeClassName="active"
               to="/about"
-              onClick={() => onMenuClick(false)}>
+              onClick={() => onMenuClick(false)}
+            >
               About
             </Link>
           </li>
@@ -164,26 +187,27 @@ export default class Header extends Component {
     super(props);
 
     this.state = {
-      isMenuOpen: false,
+      isMenuOpen: false
     };
   }
 
   render() {
-    const isHomeScreen = this.context.router.isActive('/', true);
-    const {isMenuOpen} = this.state;
+    const isHomeScreen = this.context.router.isActive("/", true);
+    const { isMenuOpen } = this.state;
 
     return (
       <header
-        className={cx('Header', {
+        className={cx("Header", {
           Header__Home: isHomeScreen,
-          'Header--menuOpen': isMenuOpen,
-        })}>
+          "Header--menuOpen": isMenuOpen
+        })}
+      >
         <Navigation
           onMenuClick={isOpen => {
-            if (typeof isOpen === 'undefined') {
+            if (typeof isOpen === "undefined") {
               isOpen = !isMenuOpen;
             }
-            this.setState({isMenuOpen: isOpen});
+            this.setState({ isMenuOpen: isOpen });
           }}
         />
         {isHomeScreen && <HomeHeader />}
@@ -193,5 +217,5 @@ export default class Header extends Component {
 }
 
 Header.contextTypes = {
-  router: PropTypes.object,
+  router: PropTypes.object
 };

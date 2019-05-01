@@ -1,9 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router';
-import constants from 'helpers/constants';
-import Button from 'components/Button';
-import Icon from 'components/Icon';
-import Newsletter from 'components/Newsletter';
+import React from "react";
+import constants from "helpers/constants";
+import Button from "components/Button";
+import Icon from "components/Icon";
+import Newsletter from "components/Newsletter";
 
 export default () => {
   return (
@@ -16,10 +15,11 @@ export default () => {
           <section>
             <h4>About React Rally</h4>
             <div>
-              Facebook's ReactJS has taken client side development by storm.
-              From single-page apps, to server rendering, to native mobile, to
-              apps on your TV, ReactJS is everywhere. Come find out what makes
-              it so incredible.
+              React Rally is a community conference about React and topics
+              interesting to React developers. We focus on a friendly, welcoming
+              atmosphere, engaging talks from new and established speakers, and
+              plenty of hallway-track time to chat with interesting people. Join
+              us!
             </div>
           </section>
           <section>
@@ -43,7 +43,7 @@ export default () => {
           <section>
             <h4>Contact</h4>
             <div>
-              Get in touch with us at{' '}
+              Get in touch with us at{" "}
               <a href="mailto:team@reactrally.com">team@reactrally.com</a>.
             </div>
           </section>
@@ -53,7 +53,7 @@ export default () => {
             <Icon href="https://instagram.com/reactrally" type="instagram" />
           </section>
           <section>
-            &copy; {new Date().getFullYear()}{' '}
+            &copy; {new Date().getFullYear()}{" "}
             <a href="http://www.traceevents.io" target="_blank">
               Trace Events, LLC
             </a>
@@ -64,7 +64,8 @@ export default () => {
             <h2>Don't lose your spot.</h2>
             <Button
               href={constants.Links.TICKET_SALES}
-              className="medium primary">
+              className="medium primary"
+            >
               Buy Tickets
             </Button>
           </section>
