@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start --single-run",
-    "start": "NODE_ENV=production node server.js",
-    "dev": "NODE_ENV=development node server.js & webpack-dev-server --inline --content-base ./",
-    "build": "npm run imagemin && NODE_ENV=production webpack",
-    "imagemin": "./scripts/imagemin"
+    "start": "webpack-dev-server --inline --content-base ./ & npm run start:lambda",
+    "start:lambda": "netlify-lambda serve ./lambda",
+    "build": "npm run build:imagemin && NODE_ENV=production webpack && npm run build:lambda",
+    "build:lambda": "netlify-lambda build ./lambda",
+    "build:imagemin": "./scripts/imagemin"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "classnames": "^2.2.5",
     "cors": "^2.8.5",
     "moment": "^2.14.1",
+    "netlify-lambda": "^1.4.7",
     "prop-types": "15.6.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

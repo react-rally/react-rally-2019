@@ -69,7 +69,7 @@ export default () => {
   const [ticketList, setTicketList] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:2000/api/releases').then(res => {
+    axios.get('/api/tickets').then(res => {
       setTicketList(res.data.releases);
     });
   }, []);
@@ -126,11 +126,9 @@ export default () => {
 
       <section>
         <h2>Tickets</h2>
-        {ticketList
-          .filter(t => !t.secret)
-          .map(t => (
-            <TicketCard key={t.id} ticket={t} />
-          ))}
+        {ticketList.map(t => (
+          <TicketCard key={t.id} ticket={t} />
+        ))}
       </section>
     </div>
   );
