@@ -36,7 +36,7 @@ const HomeHeader = () => {
   return (
     <div className="Home__Header">
       <div className="Home__Header__Wrapper">
-        <img src="assets/dist/img/ReactLogo.svg" width="100" height="100" />
+        <img src="assets/dist/img/ReactLogo.svg" alt="React logo." width="100" height="100" />
         <div className="Home__Header__Content">
           <h1>React Rally</h1>
           <h2>{CONF_DATES_DISPLAY}</h2>
@@ -106,8 +106,8 @@ const Navigation = ({ onMenuClick = () => {} }) => {
   return (
     <div className="Header__Nav">
       <section className="Header__Nav__Menu">
-        <Link to="/" id="logo" onClick={() => onMenuClick(false)}>
-          <img src="assets/dist/img/ReactLogo.svg" width="44" height="44" />
+        <Link to="/" id="logo" aria-label="Home" onClick={() => onMenuClick(false)}>
+          <img src="assets/dist/img/ReactLogo.svg" alt="React logo." width="44" height="44" />
         </Link>
         <ul>
           <li>

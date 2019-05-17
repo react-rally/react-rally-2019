@@ -114,7 +114,7 @@ button.transparent {
 button[disabled] {
   background-color: $color-grayLightest;
   border-color: $color-grayLight;
-  color: $color-grayDark;
+  color: $color-grayDarkest;
 }
 
 input[type='text'],
@@ -264,7 +264,7 @@ input[type='email'] {
   margin: 25px 0;
 }
 .Home__UpcomingDate--disabled {
-  color: $color-gray;
+  color: $color-grayDarkest;
 }
 .Home__UpcomingDate--disabled time {
   text-decoration: line-through;
@@ -278,7 +278,7 @@ input[type='email'] {
   display: block;
 }
 .Home__UpcomingDate small {
-  font-size: $size-font-small;
+  font-size: $size-font-medium;
 }
 
 .Home__TicketCard {
@@ -478,7 +478,7 @@ input[type='email'] {
 
 /* -- Header -- */
 .Header {
-  background-color: $color-tealLight;
+  background-color: $color-teal;
 }
 .Header__Home {
   background: url(../dist/img/TimpanogosHeader.png) no-repeat center -100px fixed;
@@ -590,9 +590,9 @@ input[type='email'] {
 /* -- Footer -- */
 
 .Footer {
-  color: $color-grayDark;
+  color: $color-grayDarkest;
   background-color: $color-grayLightest;
-  font-size: 0.7em;
+  font-size: 0.8em;
   padding: 50px;
 }
 .Footer__Grid {
@@ -641,7 +641,7 @@ section.Footer__Tickets h2 {
   font-size: $size-font-medium;
 }
 .Person em {
-  color: $color-grayDark;
+  color: $color-grayDarkest;
   display: inline-block;
   font-size: $size-font-small;
   height: 45px;

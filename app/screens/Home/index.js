@@ -25,7 +25,7 @@ const UpcomingDate = ({timestamp, description}) => {
         Home__UpcomingDate: true,
         'Home__UpcomingDate--disabled': isAfter,
       })}>
-      <img src={iconSource} />
+      <img alt="" src={iconSource} />
       <div>
         <time>{date.format('MMMM D, YYYY')}</time>
         <small>{description}</small>
@@ -45,7 +45,9 @@ const TicketCard = ({name, description, price, soldOut}) => {
         <p>{description}</p>
       </div>
       <div className="Home__TicketCard__Order">
-        <h2>{isNaN(price) ? '' : '$' + price}</h2>
+        {!isNaN(price) && (
+          <h2>{`$${price}`}</h2>
+        )}
         <Button
           className="primary"
           href={constants.Links.TICKET_SALES}

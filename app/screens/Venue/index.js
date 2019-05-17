@@ -14,8 +14,8 @@ export default () => {
         </h2>
         <div className="Venue__Details">
           <div className="Venue__Details__Mapbox">
-            <a href={constants.Links.VENUE_DIRECTIONS} target="_blank">
-              <img src="assets/dist/img/Sheraton_Map.png" width="400" />
+            <a href={constants.Links.VENUE_DIRECTIONS} aria-label="Map directions to venue." target="_blank">
+              <img src="assets/dist/img/Sheraton_Map.png" alt="" width="400" />
             </a>
             <div className="Venue__Details__Mapbox__Address">
               <strong>Sheraton Salt Lake City Hotel</strong>
@@ -53,8 +53,8 @@ export default () => {
         <h2>The Afterparty</h2>
         <div className="Venue__Details">
           <div className="Venue__Details__Mapbox">
-            <a href={constants.Links.PARTY_DIRECTIONS} target="_blank">
-              <img src="assets/dist/img/Gateway_Map.png" width="400" />
+            <a href={constants.Links.PARTY_DIRECTIONS} aria-label="Map directions to after party." target="_blank">
+              <img src="assets/dist/img/Gateway_Map.png" alt="" width="400" />
             </a>
             <div className="Venue__Details__Mapbox__Address">
               <strong>The Gateway</strong>
