@@ -5,7 +5,7 @@ import Icon from 'components/Icon'
 export default (props) => {
   return (
     <div className="Person">
-      <Avatar url={props.avatar} size={200}/>
+      <Avatar url={props.avatar} name={props.name} size={200}/>
       <b>{props.name}</b><br/>
       <em>{props.title}</em>
       <div className="Person__Social">
