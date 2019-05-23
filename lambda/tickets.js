@@ -13,6 +13,7 @@ exports.handler = function(event, context, callback) {
         : res.data.data
             .filter(r => !r.attributes.secret)
             .map(r => ({
+              id: r.attributes.id,
               title: r.attributes.title,
               description: r.attributes.description,
               price: r.attributes.price,
