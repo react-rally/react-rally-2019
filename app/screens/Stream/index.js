@@ -1,6 +1,6 @@
 import React from 'react';
 import constants from 'helpers/constants';
-import {getLiveStreamEmbedURL} from 'helpers/livestream';
+import { getLiveStreamEmbedURL } from 'helpers/livestream';
 
 export default () => {
   let url = getLiveStreamEmbedURL();
@@ -15,9 +15,10 @@ export default () => {
         frameBorder="0"
         allow="autoplay; encrypted-media"
         allowFullScreen
+        title="React Rally Stream"
       />
       <div className="Stream__Caption">
-        <img src="assets/dist/img/ReactLogoRed.svg" width="42" />
+        <img src="assets/dist/img/ReactLogoRed.svg" width="42" alt="React Logo" />
         <h2>React Rally 2019 Live Stream</h2>
       </div>
     </div>

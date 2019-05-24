@@ -60,33 +60,33 @@ const HomeHeader = () => {
                 label="Live stream coming soon"
               />
             ) : (
-              <span>
-                <Tickets />
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                  <span>
+                    <Tickets />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                 {isCFPOpen && (
-                  <span>
-                    <Button
-                      href={constants.Links.PROPOSAL_FORM}
-                      className="large primary"
-                    >
-                      Submit Proposal
+                      <span>
+                        <Button
+                          href={constants.Links.PROPOSAL_FORM}
+                          className="large primary"
+                        >
+                          Submit Proposal
                     </Button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                  </span>
+                    )}
+                    {isOpportunityScholarshipAvailable && (
+                      <span>
+                        <Button
+                          href={constants.Links.OPPORTUNITY_SCHOLARSHIP_FORM}
+                          className="large"
+                        >
+                          Apply For Scholarship
+                    </Button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                  </span>
+                    )}
                   </span>
                 )}
-                {isOpportunityScholarshipAvailable && (
-                  <span>
-                    <Button
-                      href={constants.Links.OPPORTUNITY_SCHOLARSHIP_FORM}
-                      className="large"
-                    >
-                      Apply For Scholarship
-                    </Button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                  </span>
-                )}
-              </span>
-            )}
             {isHotelAvailable && (
               <Button
                 href={constants.Links.HOTEL_RESERVATION}
@@ -102,7 +102,7 @@ const HomeHeader = () => {
   );
 };
 
-const Navigation = ({ onMenuClick = () => {} }) => {
+const Navigation = ({ onMenuClick = () => { } }) => {
   return (
     <div className="Header__Nav">
       <section className="Header__Nav__Menu">
@@ -114,6 +114,7 @@ const Navigation = ({ onMenuClick = () => {} }) => {
             <Link
               activeClassName="active"
               to="/speakers"
+              aria-label="React Rally Speakers"
               onClick={() => onMenuClick(false)}
             >
               Speakers
@@ -123,6 +124,7 @@ const Navigation = ({ onMenuClick = () => {} }) => {
             <Link
               activeClassName="active"
               to="/schedule"
+              aria-label="React Rally Schedule"
               onClick={() => onMenuClick(false)}
             >
               Schedule
@@ -132,6 +134,7 @@ const Navigation = ({ onMenuClick = () => {} }) => {
             <Link
               activeClassName="active"
               to="/venue"
+              aria-label="React Rally Venue"
               onClick={() => onMenuClick(false)}
             >
               Venue
@@ -141,6 +144,7 @@ const Navigation = ({ onMenuClick = () => {} }) => {
             <Link
               activeClassName="active"
               to="/sponsors"
+              aria-label="React Rally Sponsors"
               onClick={() => onMenuClick(false)}
             >
               Sponsors
@@ -150,6 +154,7 @@ const Navigation = ({ onMenuClick = () => {} }) => {
             <Link
               activeClassName="active"
               to="/conduct"
+              aria-label="React Rally Code of Conduct"
               onClick={() => onMenuClick(false)}
             >
               Conduct
@@ -159,6 +164,7 @@ const Navigation = ({ onMenuClick = () => {} }) => {
             <Link
               activeClassName="active"
               to="/about"
+              aria-label="React Rally About"
               onClick={() => onMenuClick(false)}
             >
               About
@@ -167,10 +173,10 @@ const Navigation = ({ onMenuClick = () => {} }) => {
         </ul>
       </section>
       <section className="Header__Nav__Social">
-        <Icon href="https://twitter.com/ReactRally" type="twitter" />
-        <Icon href="https://github.com/react-rally" type="github" />
-        <Icon href="https://instagram.com/reactrally" type="instagram" />
-        <Button href={constants.Links.TICKET_SALES} className="medium">
+        <Icon href="https://twitter.com/ReactRally" type="React Rally Twitter" />
+        <Icon href="https://github.com/react-rally" type="React Rally Github" />
+        <Icon href="https://instagram.com/reactrally" type="React Rally Instagram" />
+        <Button href={constants.Links.TICKET_SALES} aria-label="React Rally Tickets" className="medium">
           Tickets
         </Button>
       </section>

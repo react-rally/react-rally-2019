@@ -41,9 +41,9 @@ function isNowWithinTimeRange(date, startTime, endTime) {
     .minute(startMinute);
   let end = endTime
     ? moment
-        .utc(date)
-        .hour(endHour + OFFSET)
-        .minute(endMinute)
+      .utc(date)
+      .hour(endHour + OFFSET)
+      .minute(endMinute)
     : moment.utc(start).hour(startHour + 3 + OFFSET);
 
   return moment.utc().isBetween(start, end);
@@ -101,22 +101,22 @@ export default class extends React.Component {
   renderMenu() {
     return (
       <menu className="Schedule__Menu">
-        <a
+        <button
           href="javascript://"
           onClick={this.handleMenuItemClick.bind(this, 'dayOne')}
           className={cx('Schedule__Menu__Item', {
             'Schedule__Menu__Item--active': this.state.selectedDay === 'dayOne',
           })}>
           {CONF_DAY_ONE_DATE.format('dddd, MMMM D')}
-        </a>
-        <a
+        </button>
+        <button
           href="javascript://"
           onClick={this.handleMenuItemClick.bind(this, 'dayTwo')}
           className={cx('Schedule__Menu__Item', {
             'Schedule__Menu__Item--active': this.state.selectedDay === 'dayTwo',
           })}>
           {CONF_DAY_TWO_DATE.format('dddd, MMMM D')}
-        </a>
+        </button>
       </menu>
     );
   }
@@ -154,8 +154,8 @@ export default class extends React.Component {
                     {speaker ? (
                       <Avatar url={speaker.avatar} size={55} />
                     ) : (
-                      session.title
-                    )}
+                        session.title
+                      )}
                   </div>
                   <div className="Schedule__Session__Description">
                     {speaker ? (
@@ -172,10 +172,10 @@ export default class extends React.Component {
                         />
                       </div>
                     ) : (
-                      <div>
-                        <p>{session.description}</p>
-                      </div>
-                    )}
+                        <div>
+                          <p>{session.description}</p>
+                        </div>
+                      )}
                   </div>
                 </div>
               );
@@ -183,15 +183,15 @@ export default class extends React.Component {
             {this.renderMenu()}
           </div>
         ) : (
-          <div className="align-center">
-            <section className="highlight">
-              <p>
-                We will post the schedule once all proposals have been submitted
-                and reviewed. Stay tuned!
+            <div className="align-center">
+              <section className="highlight">
+                <p>
+                  We will post the schedule once all proposals have been submitted
+                  and reviewed. Stay tuned!
               </p>
-            </section>
-          </div>
-        )}
+              </section>
+            </div>
+          )}
       </div>
     );
   }

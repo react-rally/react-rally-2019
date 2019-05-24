@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from 'App';
 import About from 'screens/About';
 import Conduct from 'screens/Conduct';
@@ -17,7 +17,7 @@ import styles from './assets/css/styles.scss';
 const NotFound = () => {
   return (
     <div className="NotFound">
-      <img src="assets/dist/img/icons/t-rex.svg" />
+      <img src="assets/dist/img/icons/t-rex.svg" alt="T Rex" />
       <h1>Sorry, you're looking for something that no longer exists.</h1>
       <section className="highlight">
         <p>
@@ -33,7 +33,7 @@ const NotFound = () => {
 };
 
 // Fix history
-(function() {
+(function () {
   const hash = location.hash;
   const redirect = sessionStorage.redirect;
   delete sessionStorage.redirect;
