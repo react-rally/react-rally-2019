@@ -1,3 +1,4 @@
 .DS_Store
+.netlify/
 npm-debug.log
 node_modules/

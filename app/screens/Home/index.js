@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router';
+import axios from 'axios';
 import moment from 'moment';
 import cx from 'classnames';
 import constants from 'helpers/constants';
@@ -8,7 +9,6 @@ import About from 'components/About';
 import Button from 'components/Button';
 import Person from 'components/Person';
 import SpeakerData from '../../../api/speakers';
-import Tickets from '../../../api/tickets';
 
 const {Dates} = constants;
 
@@ -34,25 +34,31 @@ const UpcomingDate = ({timestamp, description}) => {
   );
 };
 
-const TicketCard = ({name, description, price, soldOut}) => {
+const TicketCard = ({ticket}) => {
+  const price = (isNaN(ticket.price) ? '' : '$') + parseInt(ticket.price, 10);
+  const isOnSale = moment.utc().isAfter(moment.utc(ticket.start_at));
+  const buttonLabel = ticket.sold_out
+    ? 'Sold Out'
+    : isOnSale
+    ? 'Buy Now'
+    : 'Coming Soon';
+
   return (
     <div
       className={cx('Home__TicketCard', {
-        'Home__TicketCard--disabled': soldOut,
+        'Home__TicketCard--disabled': ticket.sold_out,
       })}>
       <div className="Home__TicketCard__Details">
-        <h3>{name}</h3>
-        <p>{description}</p>
+        <h3>{ticket.title}</h3>
+        <p>{ticket.description}</p>
       </div>
       <div className="Home__TicketCard__Order">
-        {!isNaN(price) && (
-          <h2>{`$${price}`}</h2>
-        )}
+        <h2>{price}</h2>
         <Button
           className="primary"
           href={constants.Links.TICKET_SALES}
-          disabled={soldOut}>
-          {soldOut ? 'Sold Out' : 'Buy Now'}
+          disabled={ticket.sold_out}>
+          {buttonLabel}
         </Button>
       </div>
     </div>
@@ -60,6 +66,14 @@ const TicketCard = ({name, description, price, soldOut}) => {
 };
 
 export default () => {
+  const [ticketList, setTicketList] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/tickets').then(res => {
+      setTicketList(res.data.releases);
+    });
+  }, []);
+
   return (
     <div className="Home">
       <section className="Home__About">
@@ -69,6 +83,7 @@ export default () => {
           More about React Rally &raquo;
         </Link>
       </section>
+
       {Object.keys(SpeakerData).length > 0 ? (
         <section>
           <h2>Featured Speakers</h2>
@@ -111,9 +126,9 @@ export default () => {
 
       <section>
         <h2>Tickets</h2>
-        {Tickets.map((t, i) => {
-          return <TicketCard key={i} {...t} />;
-        })}
+        {ticketList.map(t => (
+          <TicketCard key={t.id} ticket={t} />
+        ))}
       </section>
     </div>
   );
