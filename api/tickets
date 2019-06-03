@@ -15,7 +15,7 @@
     "name": "Standard",
     "price": 500,
     "description": "The real deal. One ticket to React Rally.",
-    "soldOut": false
+    "soldOut": true
   },
   {
     "name": "React Training Early Bird - Round One",

@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import moment from "moment";
+import React, {Component} from 'react';
+import moment from 'moment';
 
-import constants from "helpers/constants";
-import Button from "components/Button";
-import Countdown from "components/Countdown";
+import constants from 'helpers/constants';
+import Button from 'components/Button';
+import Countdown from 'components/Countdown';
 
 const TICKET_RELEASE_TIME = moment
   .utc(constants.Dates.TICKET_RELEASE)
-  .add(14, "days");
+  .add(14, 'days');
 
 export default class Tickets extends Component {
   componentWillUnmount() {
@@ -31,7 +31,7 @@ export default class Tickets extends Component {
           <Countdown
             date={TICKET_RELEASE_TIME}
             label={`Tickets on sale ${TICKET_RELEASE_TIME.format(
-              "MMMM DD, YYYY"
+              'MMMM DD, YYYY',
             )}...`}
           />
         )}
