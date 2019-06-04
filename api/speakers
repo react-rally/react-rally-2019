@@ -13,6 +13,15 @@
     "featured": true,
     "avatar": "assets/dist/img/speakers/anjana.jpg"
   },
+  "soylentqueen": {
+    "name": "Sarah Lim",
+    "title": "Philosopher Queen at Notion",
+    "twitter": "soylentqueen",
+    "github": "sarahlim",
+    "featured": true,
+    "bio": "Several years ago, Sarah Lim walked into the flames with three stones and rose from the ashes with three dragons: personal computing, static types, and programming languages as user interfaces. She likes trains.",
+    "avatar": "assets/dist/img/speakers/sarah.jpg"
+  },
   "DanieC": {
     "name": "Danielle Carrick",
     "github": "daniellecarrick",
@@ -156,4 +165,3 @@
     "avatar": "assets/dist/img/speakers/princiya.jpg"
   }
 }
-
