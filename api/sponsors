@@ -1,12 +1,103 @@
 {
   "Premier": [
+    {
+      "name": "Nrwl",
+      "url": "https://nrwl.io/",
+      "image": "assets/dist/img/sponsors/nrwl.png",
+      "style": { "width": "500px" }
+    }
   ],
   "Platinum": [
+    {
+      "name": "Webflow",
+      "url": "https://webflow.com/",
+      "image": "assets/dist/img/sponsors/webflow.svg",
+      "style": { "width": "215px" }
+    },
+    {
+      "name": "ag-Grid",
+      "url": "https://www.ag-grid.com/",
+      "image": "assets/dist/img/sponsors/ag-grid.svg",
+      "style": { "width": "215px" }
+    },
+    {
+      "name": "HPE Grommet",
+      "url": "https://v2.grommet.io/",
+      "image": "assets/dist/img/sponsors/hpe-grommet.png",
+      "style": { "width": "215px" }
+    },
+    {
+      "name": "Dropbox",
+      "url": "https://www.dropbox.com/",
+      "image": "assets/dist/img/sponsors/dropbox.png",
+      "style": { "width": "215px" }
+    }
   ],
   "Gold": [
+    {
+      "name": "Progress",
+      "url": "https://www.progress.com/",
+      "image": "assets/dist/img/sponsors/progress.png",
+      "style": { "width": "175px" }
+    },
+    {
+      "name": "Bugsnag",
+      "url": "https://www.bugsnag.com/about",
+      "image": "assets/dist/img/sponsors/bugsnag.png",
+      "style": { "width": "175px" }
+    },
+    {
+      "name": "Formidable",
+      "url": "https://formidable.com/",
+      "image": "assets/dist/img/sponsors/formidable.png",
+      "style": { "width": "175px" }
+    },
+    {
+      "name": "Ionic",
+      "url": "https://www.ionic.com/",
+      "image": "assets/dist/img/sponsors/ionic.png",
+      "style": { "width": "175px" }
+    },
+    {
+      "name": "Podium",
+      "url": "https://www.podium.com/",
+      "image": "assets/dist/img/sponsors/podium.png",
+      "style": { "width": "175px" }
+    }
   ],
   "Silver": [
+    {
+      "name": "Echobind",
+      "url": "https://echobind.com/about/",
+      "image": "assets/dist/img/sponsors/echobind.png",
+      "style": { "width": "150px" }
+    },
+    {
+      "name": "Netlify",
+      "url": "https://www.netlify.com/",
+      "image": "assets/dist/img/sponsors/netlify.png",
+      "style": { "width": "150px" }
+    }
   ],
   "Supporters": [
+    {
+      "name": "Google",
+      "url": "https://about.google/intl/en/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header",
+      "image": "assets/dist/img/sponsors/google.png",
+      "style": { "width": "75px" }
+    },
+    {
+      "name": "Microsoft",
+      "url": "https://www.microsoft.com/en-us/about",
+      "image": "assets/dist/img/sponsors/microsoft.png",
+      "style": { "width": "75px" }
+    },
+    {
+      "name": "American Express",
+      "url": "https://about.americanexpress.com/",
+      "image": "assets/dist/img/sponsors/amex.png",
+      "style": { "width": "75px" }
+    }
+
   ]
 }

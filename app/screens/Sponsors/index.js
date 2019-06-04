@@ -26,25 +26,27 @@ export default () => {
           return (
             <section key={level}>
               <h2>{level}</h2>
-              {SponsorData[level].map((sponsor, i) => {
-                return sponsor.image ? (
-                  <a
-                    key={i}
-                    href={sponsor.url}
-                    target="_blank"
-                    title={sponsor.name}>
-                    <img
-                      src={sponsor.image}
-                      style={sponsor.style}
-                      alt={sponsor.name}
-                    />
-                  </a>
-                ) : (
-                  <a key={i} href={sponsor.url} target="_blank">
-                    {sponsor.name}
-                  </a>
-                );
-              })}
+              <div className="Sponsors__Logos">
+                {SponsorData[level].map((sponsor, i) => {
+                  return sponsor.image ? (
+                    <a
+                      key={i}
+                      href={sponsor.url}
+                      target="_blank"
+                      title={sponsor.name}>
+                      <img
+                        src={sponsor.image}
+                        style={sponsor.style}
+                        alt={sponsor.name}
+                      />
+                    </a>
+                  ) : (
+                    <a key={i} href={sponsor.url} target="_blank">
+                      {sponsor.name}
+                    </a>
+                  );
+                })}
+              </div>
             </section>
           );
         })}
