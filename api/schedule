@@ -177,7 +177,7 @@
       "time": "5:00 pm",
       "title": "Human React",
       "speaker": "holtbt",
-      "description": "Hooks. Sagas. Synergy. Buzzword. Trend. Fad.\nWe love to be in the now. We all want to thought leader on the Twitters. However we’re building apps for humans, not bringing humans to our code. Your neighbor doesn’t care of your TypeScript generics nor your observable operators. They care if your app works, is responsive to input, and is intuitively designed.\nWe will build a monument to engineering folly, a tower of 6to5. We’ll explore engineering excellence that leads to UX failures. You’ll see that you most first remember the human and then shape your implementation to them, the users."
+      "description": "Hooks. Sagas. Synergy. Buzzword. Trend. Fad.\nWe love to be in the now. We all want to thought leader on the Twitters. However we’re building apps for humans, not bringing humans to our code. Your neighbor doesn’t care of your TypeScript generics nor your observable operators. They care if your app works, is responsive to input, and is intuitively designed.\nWe will build a monument to engineering folly, a tower of 6to5. We’ll explore engineering excellence that leads to UX failures. You’ll see that you must first remember the human and then shape your implementation to them, the users."
     },
     {
       "time": "6:30 pm",
