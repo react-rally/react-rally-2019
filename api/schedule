@@ -1,8 +1,188 @@
 {
   "dayOne": [
+    {
+      "time": "7:00 am",
+      "title": "Registration"
+    },
+    {
+      "time": "7:30 am",
+      "title": "Breakfast"
+    },
+    {
+      "time": "9:00 am",
+      "title": "",
+      "speaker": "stubbornella",
+      "description": ""
+    },
+    {
+      "time": "9:30 am",
+      "title": "Frontend Application Bundles: the Docker of Frontend",
+      "speaker": "glenmaddern",
+      "description": "Frontend apps are on the cusp of a revolution—React is about to launch a streaming server renderer that massively improves performance on both low-end and high-end devices. It's a new dawn for performance & accessibility, but raises another question? How should we host the server component? Can we do that without vendor lock-in?\nEnter FABs, a portable, compact, immutable, server-side JS format that lets you deploy anything from static sites or Next.js to full custom server-rendered React apps anywhere that can run JS, like Cloudflare Workers, Lambda@Edge, Now, etc. Come check it out!"
+    },
+    {
+      "time": "10:00 am",
+      "title": "Break"
+    },
+    {
+      "time": "10:30 am",
+      "title": "Off Balance — Interactive Storytelling with React",
+      "speaker": "mcernusca",
+      "description": "In this talk we’ll hold a technical retrospective of an animation heavy interactive experience built with React. Through this lens we’ll discuss shape generation, orchestration and dynamic interpolation strategies to bring a design to life. Along the way we’ll cover performance considerations and lessons learned."
+    },
+    {
+      "time": "11:00 am",
+      "title": "Is React Translated Yet?",
+      "speaker": "tesseralis",
+      "description": "From around the world, voices sounded out in a multitude of languages: is React Translated Yet? With the efforts of hundreds of contributors, I can finally say: ¡Sí! Sim! はい！\nOver the course of a month, I helped the React team kick off translations of reactjs.org into 40 languages. Join me for a behind-the-scenes look at what it takes to get the docs for a massively popular library translated. We'll talk about GitHub rate limits, managing a global community, amateur bot-building and more!"
+    },
+    {
+      "time": "11:30 am",
+      "title": "Saving the Web, 16ms at a Time",
+      "speaker": "joshwcomeau",
+      "description": "Creating rich animations that run at a buttery 60fps is a deceptively complex task. And yet, it's so important: mobile apps have rich, sophisticated animations, and the web is falling behind.\nIn this talk, we'll break down how to convert a janky animation into a smooth one. We'll unearth rarely-seen techniques, like using spritesheets with CSS, and discover bleeding-edge web APIs like OffscreenCanvas that unlock a world of possibilities."
+    },
+    {
+      "time": "12:00 pm",
+      "title": "Lunch"
+    },
+    {
+      "time": "2:00 pm",
+      "title": "Helping Governments And Nonprofits With Our Coding Superpower",
+      "speaker": "joelbdenning",
+      "description": "\"They're programmers, not coders.\"\n\"Our process is just too complicated to be automated.\"\n\"We'll get back to you in 8 months.\"\n\"We need to double our workforce to do the thing that the software is doing.\"\nThe world of writing software for governments and nonprofits is so different from the one we're used to. But with surprisingly small effort, we can make impact in our local community.\nI'll talk through how four cold emails have given me the chance to make an impact in Utah's criminal justice system."
+    },
+    {
+      "time": "2:30 pm",
+      "title": "Battle for the DOM: D3 vs. React",
+      "speaker": "DanieC",
+      "description": "[Spoiler Alert: React wins] D3 is the most popular library for creating interactive data visualizations. React is one of the most popular frameworks for web development (duh, that’s why we’re here). But, anyone that has tried to use them together, has realized they don’t always play nice. In this talk, I will share how I learned this the hard way, as well as tips and case studies for building data visualizations in React, and when to give the power to D3."
+    },
+    {
+      "time": "3:00 pm",
+      "title": "Break"
+    },
+    {
+      "time": "3:30 pm",
+      "title": "A11y And React, Why Is It Important?",
+      "speaker": "johnnyxbell",
+      "description": "I have a disability (missing my left arm from the elbow down). I have encountered a lot of discrimination throughout my 10 year career. I’m now at a point mentally in my career that I’m ready to talk about my experiences.\nAs the web is becoming a place for everyone including people with disabilities, it’s important for everyone to start thinking about a11y.\nA11y is often overlooked or seen as a ‘nice to have’. With 20-25% of the population having disabilities (https://www.w3.org/WAI/business-case/) a11y is getting more and more important to be seen as a must have and included in a MVP."
+    },
+    {
+      "time": "4:00 pm",
+      "title": "Creating Awesome UX with Observables",
+      "speaker": "featherart",
+      "description": "Everyone is a power user of the web. We have no patience for a UX that doesn’t move as swiftly as our attention spans. We want maximum flexibility and instant feedback. We want to search without pressing a button, to be fickle, and to talk to our computers like the boss in IT Crowd (except there’s a response).\nObservables FTW! First, an exploration of Observables at a high level, then a survey of use cases, followed by a dive into implementation details. Surprisingly, with libraries like RxJs we can implement Observable patterns in React with few lines of code."
+    },
+    {
+      "time": "4:30 pm",
+      "title": "So You Think YOU'RE a Junior Dev?",
+      "speaker": "revelcw",
+      "description": "Hi my name is Revel. I'm 10 years old and am a I junior developer. I love to code, especially using React Hooks. This talk will walk you through how I took an app that uses Hooks, and refactored it into its own general purpose custom hook that I published as OSS."
+    },
+    {
+      "time": "5:00 pm",
+      "title": "Horrible Interfaces and How to Build Them",
+      "speaker": "aahfrena",
+      "description": "With the purpose of learning some Javascript, CSS, and HTML, I built some really horrible volume-level interfaces inspired by this imgur gallery: https://imgur.com/gallery/lOSqKa1. Some of the topics we’ll cover: CSS transforms, HTML5 audio & mic, HTML5 Drag & Drop, and how to get users to hate us."
+    },
+
+    {
+      "time": "6:00 pm",
+      "title": "Dinner",
+      "description": "Meet up with conference attendees sharing similar taste in cuisine at pre-arranged restaurants for dinner (self pay)."
+    },
+    {
+      "time": "8:00 pm",
+      "title": "Party",
+      "description": "Meet at Sheraton Ballroom for milkshakes and board games or Sheraton Bar for karaoke."
+    }
   ],
   "dayTwo": [
+    {
+      "time": "7:00 am",
+      "title": "Registration"
+    },
+    {
+      "time": "7:30 am",
+      "title": "Breakfast"
+    },
+    {
+      "time": "9:00 am",
+      "title": "",
+      "speaker": "AnjanaVakil",
+      "description": ""
+    },
+    {
+      "time": "9:30 am",
+      "title": "",
+      "speaker": "soylentqueen",
+      "description": ""
+    },
+    {
+      "time": "10:00 am",
+      "title": "Break"
+    },
+    {
+      "time": "10:30 am",
+      "title": "Debugging the Debugger",
+      "speaker": "princi_ya",
+      "description": "This talks is an inception of debugging the Firefox devtools' debugger which is built using React and Redux. All of us love to 'console' log our code, but there are other effective techniques that will help accelerate the debug loop cycle. In this talk I will present the various available browser devtools debugging techniques using practical examples from the community to debug the development of the debugger project!"
+    },
+    {
+      "time": "11:00 am",
+      "title": "Write Fewer Tests! From Automation to Autogeneration",
+      "speaker": "davidkpiano",
+      "description": "What if you could automatically generate hundreds of integration and end-to-end tests, instead of manually coding them? Discover how model-based testing greatly improves the maintenance and coverage of your entire React app, uncovers elusive edge-cases, and stay in sync with ever-changing requirements. In this talk, you'll learn how abstract modeling with state machines saves tons of time in both developing and testing your existing apps."
+    },
+    {
+      "time": "11:30 am",
+      "title": "Harnessing React to Build Consistently Designed Applications",
+      "speaker": "emplums",
+      "description": "This talk will cover the who, what & why of design systems as well as our approach building a React component library to accompany GitHub's design system, Primer. Attendees will walk away with a deeper knowledge of how to design a public API for components, how theming works, and common pitfalls one might come across when trying to scale a design system across an organization."
+    },
+    {
+      "time": "12:00 pm",
+      "title": "Lunch"
+    },
+    {
+      "time": "2:00 pm",
+      "title": "React Hook Pitfalls",
+      "speaker": "kentcdodds",
+      "description": "The hooks honeymoon phase is over. We were able to overlook our confusion as a reasonable familiarity issue, but now it’s time to get real about the pitfalls of React Hooks. Hooks lead to a better user experience and fewer bugs for sure, but without the right foundational understanding of them and certain JavaScript semantics, we’ll probably cause other problems in the process of using hooks.\nIn this talk, we’ll explore some of the gotchas of using hooks, why those things are problems, and how to think about hooks so we develop an intuition for how to use hooks while avoiding the pitfalls."
+    },
+    {
+      "time": "2:30 pm",
+      "title": "Code is a User Interface",
+      "speaker": "modernserf",
+      "description": "What if we could write code that was much more understandable, and eliminated entire classes of bugs at the same time? As front end developers, we understand the value of well-designed user interfaces. But our code is also a user interface, with our fellow programmers as the users, and we can improve the understandability and maintainability of our code by applying UI design principles."
+    },
+    {
+      "time": "3:00 pm",
+      "title": "Break"
+    },
+    {
+      "time": "4:00 pm",
+      "title": "Follow the (full)stack trace: understand your app with distributed tracing",
+      "speaker": "willslab",
+      "description": "What if we could follow a user request, from a page load in the browser, to our backend, through our services, to the database, and back? What does it look like to see how our UI receives data and renders across a timeline? What happens when we put these traces together?!\nIn this talk, we will learn the basics of distributed tracing, how to instrument a React and Redux app effectively, and ultimately, understand everything that happens when someone uses your app!"
+    },
+    {
+      "time": "4:30 pm",
+      "title": "Weaving Tapestries of Code",
+      "speaker": "knitcodemonkey",
+      "description": "Yarns, fibers, and fabrics. You have more in common with the weavers of yesteryear than you realize. In this expedition into the past of fiber arts, we'll explore how our coding art is the continuation of our ancestors at the loom, how you can learn lessons from their patterns, and maybe a thing or two about that nice sweater you're wearing."
+    },
+    {
+      "time": "5:00 pm",
+      "title": "Human React",
+      "speaker": "holtbt",
+      "description": "Hooks. Sagas. Synergy. Buzzword. Trend. Fad.\nWe love to be in the now. We all want to thought leader on the Twitters. However we’re building apps for humans, not bringing humans to our code. Your neighbor doesn’t care of your TypeScript generics nor your observable operators. They care if your app works, is responsive to input, and is intuitively designed.\nWe will build a monument to engineering folly, a tower of 6to5. We’ll explore engineering excellence that leads to UX failures. You’ll see that you most first remember the human and then shape your implementation to them, the users."
+    },
+    {
+      "time": "6:30 pm",
+      "title": "Party",
+      "description": "Meet at the Gateway for dinner, dessert, live music, and lawn games."
+    }
   ]
 }
-
-
