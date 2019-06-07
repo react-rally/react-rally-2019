@@ -150,18 +150,11 @@ export default class extends React.Component {
                   })}
                   key={i}>
                   <time>{session.time}</time>
-                  <div className="Schedule__Session__WhoWhat">
-                    {speaker ? (
-                      <Avatar url={speaker.avatar} size={55} />
-                    ) : (
-                      session.title
-                    )}
-                  </div>
                   <div className="Schedule__Session__Description">
                     {speaker ? (
                       <div>
+                        <h4>{session.title}</h4>
                         <em>{speaker.name}</em>
-                        <h3>{session.title}</h3>
                         <p
                           dangerouslySetInnerHTML={{
                             __html: (session.description || '').replace(
@@ -173,9 +166,13 @@ export default class extends React.Component {
                       </div>
                     ) : (
                       <div>
+                        <h4>{session.title}</h4>
                         <p>{session.description}</p>
                       </div>
                     )}
+                  </div>
+                  <div className="Schedule__Session__Avatar">
+                    {speaker && <Avatar url={speaker.avatar} size={55} />}
                   </div>
                 </div>
               );

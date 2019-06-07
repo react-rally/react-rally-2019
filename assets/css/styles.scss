@@ -408,6 +408,8 @@ input[type='email'] {
   position: relative;
   -webkit-transition: background-color 2s;
   transition: background-color 2s;
+  display: grid;
+  grid-template-columns: 125px auto 125px;
 }
 .Schedule__Session:last-of-type {
   border-bottom: 0 none;
@@ -416,7 +418,6 @@ input[type='email'] {
   color: $color-grayDark;
   display: inline-block;
   vertical-align: top;
-  width: 125px;
 }
 .Schedule__Session--active {
   background: $fill-lightyellow;
@@ -424,39 +425,37 @@ input[type='email'] {
 .Schedule__Session--speaker time {
   margin-top: 15px;
 }
-.Schedule__Session__WhoWhat {
+.Schedule__Session__Title {
   display: inline-block;
   font-weight: bold;
   vertical-align: top;
-  width: 100px;
-}
-.Schedule__Session--speaker .Schedule__Session__WhoWhat {
-  padding-bottom: 15px;
-}
-.Schedule__Session--description .Schedule__Session__WhoWhat {
-  padding-bottom: 0;
 }
 .Schedule__Session--speaker .Schedule__Session__Description,
 .Schedule__Session--description .Schedule__Session__Description {
-  margin-left: 225px;
+  // margin-left: 225px;
 }
 .Schedule__Session--description .Schedule__Session__Description {
-  margin-top: -30px;
+  // margin-top: -30px;
 }
 .Schedule__Session--speaker .Schedule__Session__Description {
-  margin-top: -60px;
+  // margin-top: -60px;
 }
 .Schedule__Session__Description em {
-  color: $color-teal;
+  color: $color-tealLight;
   font-style: normal;
-  font-size: $size-font-medium;
+  font-size: $size-font-small;
 }
-.Schedule__Session__Description h3 {
+.Schedule__Session__Description h4 {
+  border: 0 none;
+  padding: 0;
   color: $color-grayDarkest;
 }
 .Schedule__Session__Description p {
   font-size: $size-font-small;
   margin: 10px 0;
+}
+.Schedule__Session__Avatar {
+  text-align: right;
 }
 
 /* -- Content -- */
