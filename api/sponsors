@@ -3,8 +3,8 @@
     {
       "name": "Nrwl",
       "url": "https://nrwl.io/",
-      "image": "assets/dist/img/sponsors/nrwl.png",
-      "style": { "width": "500px" }
+      "image": "assets/dist/img/sponsors/nrwl.svg",
+      "style": { "width": "350px" }
     }
   ],
   "Platinum": [
