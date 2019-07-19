@@ -43,7 +43,7 @@
     {
       "name": "Bugsnag",
       "url": "https://www.bugsnag.com/about",
-      "image": "assets/dist/img/sponsors/bugsnag.png",
+      "image": "assets/dist/img/sponsors/bugsnag.svg",
       "style": { "width": "175px" }
     },
     {
