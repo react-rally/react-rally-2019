@@ -77,6 +77,36 @@
       "url": "https://www.netlify.com/",
       "image": "assets/dist/img/sponsors/netlify.png",
       "style": { "width": "150px" }
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/",
+      "image": "assets/dist/img/sponsors/facebook.png",
+      "style": { "width": "150px" }
+    },
+    {
+      "name": "Willis Towers Watson",
+      "url": "https://www.willistowerswatson.com/en-US",
+      "image": "assets/dist/img/sponsors/willistowerswatson.png",
+      "style": { "width": "80px" }
+    },
+    {
+      "name": "Asana",
+      "url": "https://asana.com/",
+      "image": "assets/dist/img/sponsors/asana.png",
+      "style": { "width": "100px" }
+    },
+    {
+      "name": "UnderBelly",
+      "url": "https://underbelly.is/",
+      "image": "assets/dist/img/sponsors/underbelly.svg",
+      "style": { "width": "150px" }
+    },
+    {
+      "name": "Restaurant Brands International",
+      "url": "https://www.rbi.com/",
+      "image": "assets/dist/img/sponsors/rbi.png",
+      "style": { "width": "150px" }
     }
   ],
   "Supporters": [
