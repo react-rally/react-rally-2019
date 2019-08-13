@@ -127,7 +127,12 @@
       "url": "https://about.americanexpress.com/",
       "image": "assets/dist/img/sponsors/amex.png",
       "style": { "width": "75px" }
+    },
+    {
+      "name": "Workday",
+      "url": "https://www.workday.com",
+      "image": "assets/dist/img/sponsors/workday.png",
+      "style": { "width": "75px" }
     }
-
   ]
 }
