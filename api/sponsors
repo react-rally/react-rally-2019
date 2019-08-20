@@ -107,6 +107,12 @@
       "url": "https://www.rbi.com/",
       "image": "assets/dist/img/sponsors/rbi.png",
       "style": { "width": "150px" }
+    },
+    {
+      "name": "Microsoft",
+      "url": "https://www.microsoft.com/en-us/about",
+      "image": "assets/dist/img/sponsors/microsoft.png",
+      "style": { "width": "150px" }
     }
   ],
   "Supporters": [
@@ -114,12 +120,6 @@
       "name": "Google",
       "url": "https://about.google/intl/en/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header",
       "image": "assets/dist/img/sponsors/google.png",
-      "style": { "width": "75px" }
-    },
-    {
-      "name": "Microsoft",
-      "url": "https://www.microsoft.com/en-us/about",
-      "image": "assets/dist/img/sponsors/microsoft.png",
       "style": { "width": "75px" }
     },
     {
