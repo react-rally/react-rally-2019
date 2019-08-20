@@ -325,9 +325,10 @@ input[type='email'] {
 .Schedule__Session {
   display: block;
   position: relative;
+  padding: 25px 0;
 
   .Schedule__Session__Description h4 {
-    margin-right: 60px;
+    margin-right: 70px;
   }
 
   .Schedule__Session__Avatar {
