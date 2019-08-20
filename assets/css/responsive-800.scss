@@ -321,3 +321,18 @@ input[type='email'] {
     }
   }
 }
+
+.Schedule__Session {
+  display: block;
+  position: relative;
+
+  .Schedule__Session__Description h4 {
+    margin-right: 60px;
+  }
+
+  .Schedule__Session__Avatar {
+    position: absolute;
+    top: 45px;
+    right: 0;
+  }
+}
