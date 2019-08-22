@@ -84,7 +84,7 @@
       "time": "5:00 pm",
       "title": "Horrible Interfaces and How to Build Them",
       "speaker": "aahfrena",
-      "description": "With the purpose of learning some Javascript, CSS, and HTML, I built some really horrible volume-level interfaces inspired by this imgur gallery: https://imgur.com/gallery/lOSqKa1. Some of the topics we’ll cover: CSS transforms, HTML5 audio & mic, HTML5 Drag & Drop, and how to get users to hate us."
+      "description": "With the purpose of learning some Javascript, CSS, and HTML, I built some really horrible volume-level interfaces inspired by <a href=\"https://imgur.com/gallery/lOSqKa1\">this</a> imgur gallery. Some of the topics we’ll cover: CSS transforms, HTML5 audio & mic, HTML5 Drag & Drop, and how to get users to hate us."
     },
 
     {
