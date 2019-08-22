@@ -463,6 +463,7 @@ input[type='email'] {
 .Conduct table {
   border-collapse: collapse;
   border-top: 3px solid $color-grayLight;
+  width: 100%;
 }
 .Conduct table tr:nth-child(even) {
   background-color: $color-grayLightest;
