@@ -16,7 +16,6 @@ const CONF_DATES_DISPLAY =
   moment.utc(constants.Dates.CONF_DAY_TWO).format('D, YYYY');
 
 const HomeHeader = () => {
-  const isHotelAvailable = true;
   const isOpportunityScholarshipAvailable = moment
     .utc()
     .isBetween(
@@ -26,6 +25,7 @@ const HomeHeader = () => {
   const isConferenceLive = moment
     .utc()
     .isSameOrAfter(moment.utc(constants.Dates.CONF_DAY_ONE));
+  const isHotelAvailable = !isConferenceLive;
   const isCFPOpen = moment
     .utc()
     .isBetween(
