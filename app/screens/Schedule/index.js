@@ -4,6 +4,7 @@ import moment from 'moment';
 import Avatar from 'components/Avatar';
 import constants from 'helpers/constants';
 import DateUtils from 'helpers/DateUtils';
+import scheduleInterval from 'helpers/scheduleInterval';
 import ScheduleData from '../../../api/schedule';
 import SpeakerData from '../../../api/speakers';
 
@@ -63,16 +64,18 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    this.timer = setInterval(
+    this.cancelInterval = scheduleInterval(
       this.forceUpdate.bind(this),
-      10 * DateUtils.SECONDS,
+      30 * DateUtils.MINUTES,
     );
     this.scrollToActiveSession();
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
-    this.timer = null;
+    if (typeof this.cancelInterval === 'function') {
+      this.cancelInterval();
+      this.cancelInterval = null;
+    }
   }
 
   componentDidUpdate() {
