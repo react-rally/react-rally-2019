@@ -117,7 +117,7 @@
       "time": "9:30 am",
       "title": "All The Memory Safety Of C Combined With All The Blazing Speed Of JavaScript",
       "speaker": "soylentqueen",
-      "description": ""
+      "description": "According to the website, WebAssembly is \"a binary instruction format for a stack-based virtual machine, designed as a compilation target for higher-level languages like C++ and Rust.\" One year ago, I knew what some of those words meant. Now I understand all of them, and my goal is to share this understanding with you, fellow JavaScript programmer. We'll deep-dive into the WASM linear memory model and execution semantics, and explore how to interact with WASM modules using the JavaScript API. If calling C++ a \"high-level language\" makes you feel slightly ill, you are the target audience member for this talk. The title, by the way, is a reference to <a href=\"https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html\">A Brief, Incomplete, and Mostly Wrong History of Programming Languages</a> by James Iry, which you should read immediately."
     },
     {
       "time": "10:00 am",
