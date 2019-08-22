@@ -33,7 +33,7 @@
     "name": "React Training",
     "price": 900,
     "description": "Join Ryan Florence and Michael Jackson, for two-days of intense training in their brand new \"React Hooks\" workshop August 20-21. For more details see https://reacttraining.com/workshops/",
-    "soldOut": false
+    "soldOut": true
   },
   {
     "name": "Significant Other Activity Ticket",
