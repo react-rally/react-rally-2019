@@ -5,7 +5,6 @@ import App from 'App';
 import About from 'screens/About';
 import Conduct from 'screens/Conduct';
 import Home from 'screens/Home';
-import Proposals from 'screens/Proposals';
 import Schedule from 'screens/Schedule';
 import Speakers from 'screens/Speakers';
 import Sponsors from 'screens/Sponsors';

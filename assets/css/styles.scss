@@ -455,6 +455,23 @@ input[type='email'] {
   text-align: right;
 }
 
+/* -- Conduct -- */
+.Conduct h4 {
+  border: 0 none;
+  padding: 25px 0;
+}
+.Conduct table {
+  border-collapse: collapse;
+  border-top: 3px solid $color-grayLight;
+}
+.Conduct table tr:nth-child(even) {
+  background-color: $color-grayLightest;
+}
+.Conduct table td {
+  border-bottom: 1px solid $color-grayLight;
+  padding: 10px 0;
+}
+
 /* -- Content -- */
 .Content {
   font-size: $size-font-medium;

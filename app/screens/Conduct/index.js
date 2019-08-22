@@ -18,7 +18,14 @@ export default () => {
           have questions, please let us know.
         </p>
         <br />
-        <Button href={constants.Links.CODE_OF_CONDUCT_FORM} className="primary">
+        <Button
+          className="primary"
+          onClick={() => {
+            document.getElementById('report').scrollIntoView({
+              block: 'start',
+              behavior: 'smooth',
+            });
+          }}>
           Report an Incident
         </Button>
         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -93,6 +100,74 @@ export default () => {
           </a>
           .
         </p>
+      </section>
+
+      <section>
+        <h2 id="report">Reporting an Incident</h2>
+        <p>
+          We want everyone attending React Rally to have a positive, memorable
+          experience, The Code of Conduct helps us achieve this by offering
+          people a safe, welcoming environment. If you witness or experience a
+          violation of the Code of Conduct please report it immediately. You can
+          report violations in the following ways:
+        </p>
+
+        <ul>
+          <li>Contact a staff member, identified by staff t-shirts.</li>
+          <li>
+            Email us at{' '}
+            <a href="mailto:team@reactrally.com?subject=Code of Conduct Violation">
+              team@reactrally.com
+            </a>
+            .
+          </li>
+          <li>Call us. Please check our Slack for the staff phone number.</li>
+        </ul>
+
+        <h4>Important Contacts</h4>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>All Emergencies</td>
+              <td>
+                <a href="tel:911" rel="noopener noreferrer" target="_blank">
+                  911
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Salt Lake City Police Department</td>
+              <td>
+                <a href="https://goo.gl/maps/qmUiKA3sDCJzT8DC8" target="_blank">
+                  475 S 300 E, Salt Lake City, UT 84111
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Salt Lake City Police Non-Emergency</td>
+              <td>
+                <a
+                  href="tel:+1-(801)-799-3000"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  +1 (801) 799-3000
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Sheraton Salt Lake City</td>
+              <td>
+                <a
+                  href="tel:+1-(801)-401-2000"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  +1 (801) 401-2000
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </div>
   );
