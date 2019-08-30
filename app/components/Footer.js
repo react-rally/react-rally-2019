@@ -54,7 +54,7 @@ export default () => {
           </section>
           <section>
             &copy; {new Date().getFullYear()}{" "}
-            <a href="http://www.traceevents.io" target="_blank">
+            <a href="https://www.trace.events" target="_blank">
               Trace Events, LLC
             </a>
           </section>
